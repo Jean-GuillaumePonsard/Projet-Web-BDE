@@ -2,3 +2,24 @@ img
 { 
 	width: 100%; 
 }
+
+.container
+{
+	margin : 0;
+	
+	width: 100%;
+	
+}
+
+header.fixe
+{
+	position: fixed;
+	top: 0;
+}
+
+.body.absolue
+{
+	position: absolute;
+	
+}
+
