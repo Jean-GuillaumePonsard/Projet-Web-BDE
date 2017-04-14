@@ -1,135 +1,194 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Past Activities</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="styleEssai.css">
-</head>
-<body>
-<div class="container">
-<header class="row">
 	
-	<div class="col-sm-1"><img src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/12552933_937571146327025_6130196920571711809_n.jpg?oh=aa8c4610ff933816ca276a4803aba1b4&oe=598C9FC5" alt="BDE Logo" /></div>
-	<div class="col-sm-3"><h1>BDE Website</h1></div>
-	<div class="col-sm-8">
-	<nav class="navbar">
-		<ul class="nav navbar-nav">
-			<li><a href="home.html">Accueil</a></li>
-			<li><a href="futurActivities.html">Activities</a></li>
-			<li><a href="shop.html">Shop</a></li>
-			<li><a href="">BDE Members</a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="cart.html">Cart</a></li>
-			<li><a href="">log out</a></li>
-			<li><a href="profil.html">UserID</a></li>
-			<li><a href="">FR</a></li>
-			<li><a href="">EN</a></li>
-		</ul>
-	</nav>
-	</div>
-</header>
-<div class="body">
-<nav class="row navbar">
-	<div class="col-sm-6 col-sm-offset-3">
-	<ul class="nav navbar-nav">
-		<li><a href="pastActivities.html">Past activities</a></li>
-		<li><a href="futurActivities.html">Future Activities</a></li>
-		<li><a href="proposal.html">Proposal</a></li>
-	</ul>
-	</div>
-</nav>
-<section class="row">
-	<div class="col-sm-10 col-sm-offset-1">
-		<div class="row"><h1 class="col-sm-12">Past Activities</h1></div>
-		<div class="row"><article class="col-sm-10 col-sm-offset-1">
-			<div class="row">
-			<h2 class="col-sm-2">Date</h2>
-			<h2 class="col-sm-10">Activity Name</h2>
-			<p class="col-sm-10 col-sm-offset-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			<button class="col-sm-1 col-sm-offset-11">more</button>
-		</article></div>
-		<div class="row"><article class="col-sm-10 col-sm-offset-1">
-			<div class="row">
-			<h2 class="col-sm-2">Date</h2>
-			<h2 class="col-sm-10">Activity Name</h2>
-			<p class="col-sm-10 col-sm-offset-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			<button class="col-sm-1 col-sm-offset-11">more</button>
-		</article></div>
-		<div class="row"><article class="col-sm-10 col-sm-offset-1">
-			<div class="row">
-			<h2 class="col-sm-2">Date</h2>
-			<h2 class="col-sm-10">Activity Name</h2>
-			<p class="col-sm-10 col-lg-offset-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			<button class="col-sm-1 col-sm-offset-11">more</button>
-		</article></div>
-		<div class="row col-sm-6 col-sm-offset-3 ">
-		<ul class="pagination">
-    		<li><a href="#">&laquo;</a></li>
-    		<li><a href="#">1</a></li>
-    		<li><a href="#">2</a></li>
-    		<li><a href="#">3</a></li>
-    		<li><a href="#">&raquo;</a></li>
-  		</ul>
-  		</div>
-  	</div>
-</section>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styleEssai.css">
+	<style type="text/css">
+		header div .nav li a {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	</style>
+</head>
 
+
+<body>
+
+<header class="navbar navbar-default navbar-static-top" style="min-height: 80px; margin: 0;">
+
+	<nav class="container">
+	
+		<div class="nav navbar-header" style="min-height: 80px;">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+			<div class="nav navbar-brand" style="padding: 0px 15px 0px 5px;">
+				<img src="../images/LogoBDE.png" alt="BDE Logo" style="display: inline; min-height: 50px; max-height: 80px; width: auto; padding-right: 15px;" />BDE Website
+			</div>
+		</div>
+		<div id="mainMenu" class="navbar-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="active"><a href="home.html">Home</a></li>
+				<li><a href="futurActivities.html">Activities</a></li>
+				<li><a href="shop.html">Shop</a></li>
+				<li><a href="">BDE Members</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="">log in</a></li>
+				<li><a href="profilInscription.html">Sign in</a></li>
+				<li><a href="">FR</a></li>
+				<li><a href="">EN</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<div class="container-fluid body" style="background: black;padding: 0;background-image:url(https://images3.alphacoders.com/245/245765.jpg);overflow: hidden;">
+	<nav class="row navbar">
+		<div class="col-md-8 col-md-offset-2 navActivity" style="background: red;">
+			<ul class="nav navbar-nav contenu">
+				<li><a href="pastActivities.html">Past activities</a></li>
+				<li><a href="futurActivities.html">Future Activities</a></li>
+				<li><a href="proposal.html">Proposal</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="col-md-10 col-md-offset-1" >
+
+		<section class="row" style="background-color: rgba(190, 190, 190, 0.8);">
+			
+			<div class="row">
+				<h1 class="col-md-12 board-title" style="text-align: center;margin-bottom: 5%;margin-top: 5%;">Past Activities</h1>
+			</div>
+			<div class="row">
+				<article class="col-md-10 col-md-offset-1" style="background: white;margin-bottom: 5%; border-radius: 10px;height: 10%;font-size: 100%;">
+					<div class="row" >
+						<div class="col-md-2 " style="padding-right:0; ">
+							<h2 class=" date" style="background: #bb233c;text-align: center;color: white;border-radius: 30px;padding: 10%;">20 Février 2016</h2>
+						</div>
+						<div class="col-md-10 description" style="">
+							<h2 class="col-md-12 a" style="color: #bb233c;">Activity Name</h2>
+							<p class="col-md-12 b">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+					<button class="row col-md-2 col-md-offset-10 btn btn-primary" style="background-color: #bb233c; border-width: 1.5px; border-color: #a01128;">more</button>
+				</article>
+			</div>
+			
+			<div class="row">
+				<article class="col-md-10 col-md-offset-1" style="background: white;margin-bottom: 5%; border-radius: 10px;height: 10%;font-size: 100%;">
+					<div class="row" >
+						<div class="col-md-2 " style="padding-right:0; ">
+							<h2 class=" date" style="background: #bb233c;text-align: center;color: white;border-radius: 30px;padding: 10%;">20 Février 2016</h2>
+						</div>
+						<div class="col-md-10 description" style="">
+							<h2 class="col-md-12 a" style="color: #bb233c;">Activity Name</h2>
+							<p class="col-md-12 b">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+					<button class="row col-md-2 col-md-offset-10 btn btn-primary" style="background-color: #bb233c; border-width: 1.5px; border-color: #a01128;">more</button>
+				</article>
+			</div>
+			
+			<div class="row">
+				<article class="col-md-10 col-md-offset-1" style="background: white;margin-bottom: 5%; border-radius: 10px;height: 10%;font-size: 100%;">
+					<div class="row" >
+						<div class="col-md-2 " style="padding-right:0; ">
+							<h2 class=" date" style="background: #bb233c;text-align: center;color: white;border-radius: 30px;padding: 10%;">20 Février 2016</h2>
+						</div>
+						<div class="col-md-10 description" style="">
+							<h2 class="col-md-12 a" style="color: #bb233c;">Activity Name</h2>
+							<p class="col-md-12 b">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+					<button class="row col-md-2 col-md-offset-10 btn btn-primary" style="background-color: #bb233c; border-width: 1.5px; border-color: #a01128;">more</button>
+				</article>
+			</div>	
+			<div class="row col-sm-6 col-md-offset-3 " style="text-align: center;">
+				<ul class="pagination">
+		    		<li><a href="#">&laquo;</a></li>
+		    		<li><a href="#">1</a></li>
+		    		<li><a href="#">2</a></li>
+		    		<li><a href="#">3</a></li>
+		    		<li><a href="#">&raquo;</a></li>
+		  		</ul>
+		  	</div>
+		  	
+		</section>
+	</div>
 
 <footer class="row">
 	
-	<div class="col-sm-4 "><p>
+	<div class="col-md-4 "><p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 			consequat
 	</p></div>
-	<div class="col-sm-2 col-lg-offset-3"><a href="">Mention legal</a></div>
-	<div class="col-sm-2"><a href="">Contact</a></div>
-	<div class="col-sm-1 "><a href=""><img src="http://icon-icons.com/icons2/836/PNG/512/Facebook_icon-icons.com_66805.png" alt="facebook" /></a></div>
+	<div class="col-md-2 col-md-offset-3"><a href="">Mention legal</a></div>
+	<div class="col-md-2"><a href="">Contact</a></div>
+	<div class="col-md-1 "><a href=""><img src="http://icon-icons.com/icons2/836/PNG/512/Facebook_icon-icons.com_66805.png" alt="facebook " id="fb" /></a></div>
 
 </footer>
+
 </div>
-</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script>
-	var position_top_raccourci = $(".body").offset().top;
-  $(function(){
-   $(window).scroll(function (event) {
-    // A chaque fois que l'utilisateur va scroller (descendre la page)
-    var y = $(this).scrollTop(); // On récupérer la valeur du scroll vertical
- 
-    //si cette valeur > à 200 on ajouter la class
-    if (y >= 1) {
-      $('header').addClass('fixe');
-      $('.body').addClass('absolue');
-      $('.body.absolue').offset({top : position_top_raccourci});
-    } else {
-      // sinon, on l'enlève
-      $('header').removeClass('fixe');
-       $('.body').removeClass('absolue');
-    }
-  });
+
+<script>
+	$(function(){
+		var position_top_raccourci = $(".body").offset().top;
+        var taille = $(".description").height() ;
+        $(".date").innerHeight(taille);
+
+	$(window).scroll(function (event) {
+		// A chaque fois que l'utilisateur va scroller (descendre la page)
+		var y = $(this).scrollTop(); // On récupérer la valeur du scroll vertical
+
+		//si cette valeur > à 200 on ajouter la class
+		if (y >= 1) {
+			$('header').removeClass('navbar-static-top');
+			$('header').addClass('navbar-fixed-top');
+			$('.body').addClass('relative');
+			//$('.relative').css({position : 'relative'});
+			$('.body.relative').offset({top : position_top_raccourci});
+		} else {
+		  // sinon, on l'enlève
+		  	$('.body').removeClass('relative');
+			$('header').removeClass('navbar-fixed-top');
+			$('header').addClass('navbar-static-top');
+		}
+	});
  });
 </script>
+
+
 </body>
 </html>

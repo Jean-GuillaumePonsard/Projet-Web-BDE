@@ -1,25 +1,35 @@
-img 
+#fb
 { 
 	width: 100%; 
 }
 
-.container
+
+
+
+.body.relative
 {
-	margin : 0;
-	
-	width: 100%;
-	
+	position: relative;
+
+
 }
 
-header.fixe
+.navActivity
 {
-	position: fixed;
-	top: 0;
-}
-
-.body.absolue
-{
-	position: absolute;
+	text-align: center;
+	margin-top: 2%;
 	
 }
+.nav.navbar-nav.contenu 
+{
+	float: none;
+	display: inline-block;
+    
+vertical-align: top;
+
+}
+
+.navActivity ul li a{
+	color: white;
+}
+
 
