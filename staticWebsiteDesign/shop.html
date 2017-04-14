@@ -1,96 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Shop</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		header div .nav li a {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	</style>
 </head>
 <body>
+<header class="navbar navbar-default navbar-fixed-top" style="min-height: 80px;">
 
-<header>
-	<img src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/12552933_937571146327025_6130196920571711809_n.jpg?oh=aa8c4610ff933816ca276a4803aba1b4&oe=598C9FC5" alt="BDE Logo" />
-	<h1>BDE Website</h1>
-	<nav>
-		<ul>
-			<li><a href="home.html">Accueil</a></li>
+<nav class="container">
+	
+	<div class="nav navbar-header" style="min-height: 80px;">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+		</button>
+		<div class="nav navbar-brand" style="padding: 0px 15px 0px 5px;">
+		<img src="../images/LogoBDE.png" alt="BDE Logo" style="display: inline; min-height: 50px; max-height: 80px; width: auto; padding-right: 15px;" />BDE Website</div>
+	</div>
+	<div id="mainMenu" class="navbar-collapse">
+		<ul class="nav navbar-nav navbar-left">
+			<li class="active"><a href="#">Home</a></li>
 			<li><a href="futurActivities.html">Activities</a></li>
 			<li><a href="shop.html">Shop</a></li>
 			<li><a href="">BDE Members</a></li>
 		</ul>
-		<ul>
-			<li><a href="cart.html">Cart</a></li>
+		<ul class="nav navbar-nav navbar-right">
 			<li><a href="">log out</a></li>
-			<li><a href="profil.html">UserID</a></li>
+			<li><a href="profilInscription.html">log in</a></li>
 			<li><a href="">FR</a></li>
 			<li><a href="">EN</a></li>
 		</ul>
+		</div>
 	</nav>
-
-
 </header>
-<nav>
-	<ul>
-		<li>Product</li>
-		<li><a href="">all</a></li>
-		<li><a href="">pull-over</a></li>
-		<li><a href="">goodie</a></li>
+
+<div class="container-fluid col-xs-12">
+<aside class="sidebar col-sm-2" style="margin-top: 10%; position: fixed;">
+	<nav>
+	<ul class="list-group">
+		<h3 class="list-group-item" style="background-color: #bebebe;">Products</h3>
+		<li class="list-group-item"><a href="" style="color: #c2242a;">all</a></li>
+		<li class="list-group-item"><a href="" style="color: #c2242a;">pull-over</a></li>
+		<li class="list-group-item"><a href="" style="color: #c2242a;">goodie</a></li>
 	</ul>
 </nav>
-<section>
-		<h1>Shop</h1>
+</aside>
+<section class="jumbotron col-xs-10 col-xs-offset-2">
+	<h1>Shop</h1>
 		<article>
-			<img src="http://www.bmw.fr/dam/brandBM/common/topics/bmw-now/technology-innovation/m-gmbh-2014/introduction/BMW-m-safety-cars-02.jpg.resource.1427220570786.jpg"/>
-			<h3>Article Name</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			<form>
-				<input type="number" name="quantity" value="1">
-				<input type="submit" name="" value="cart">
-			</form>
+		<div class="media col-xs-6">
+		<div class="media-left col-xs-4">
+			<img src="http://www.bmw.fr/dam/brandBM/common/topics/bmw-now/technology-innovation/m-gmbh-2014/introduction/BMW-m-safety-cars-02.jpg.resource.1427220570786.jpg" style="width: 100%;" />
+		</div>	
+		<div class="media-body">
+				<h3 class="media-heading">Article Name</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				</p>
+				<form>
+					<input type="number" name="quantity" value="1" >
+					<input type="submit" name="" value="cart">
+				</form>
+			</div>
+		</div>
 		</article>
 		<article>
-			<img src="http://www.designdellautomobile.com/wp-content/uploads/2016/10/tesla-sports-car-convertible.jpg"/>
-			<h3>Article Name</h3>
+		<div class="media col-xs-6">
+		<div class="media-left col-xs-4">
+			<img src="http://www.designdellautomobile.com/wp-content/uploads/2016/10/tesla-sports-car-convertible.jpg" style="width: 100%;" />
+			</div>
+		<div class="media-body">
+			<h3 class="media-heading">Article Name</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</p>
 			<form>
 				<input type="number" name="quantity" value="1">
 				<input type="submit" name="" value="cart">
 			</form>
+		</div>
+		</div>
 		</article>
 		<article>
-			<img src="https://themustangsource.com/forums/attachments/f737/59020d1212248198-nice-67-390-fastback-madison-ebay-100_0242.jpg"/>
-			<h3>Article Name</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			<form>
-				<input type="number" name="quantity" value="1">
-				<input type="submit" name="" value="cart">
-			</form>
+		<div class="media col-xs-6">
+		<div class="media-left col-xs-4">
+			<img src="https://themustangsource.com/forums/attachments/f737/59020d1212248198-nice-67-390-fastback-madison-ebay-100_0242.jpg" style="width: 100%;" />
+		</div>	
+		<div class="media-body">
+				<h3 class="media-heading">Article Name</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				</p>
+				<form>
+					<input type="number" name="quantity" value="1" >
+					<input type="submit" name="" value="cart">
+				</form>
+			</div>
+		</div>
 		</article>
 		<ul class="pagination">
-    		<li><a href="#">&laquo;</a></li>
-    		<li><a href="#">1</a></li>
-    		<li><a href="#">2</a></li>
-    		<li><a href="#">3</a></li>
-    		<li><a href="#">&raquo;</a></li>
-  </ul>
+    		<li><a href="#" style="color: #c2242a;">&laquo;</a></li>
+    		<li><a href="#" style="color: #c2242a;">1</a></li>
+    		<li><a href="#" style="color: #c2242a;">2</a></li>
+    		<li><a href="#" style="color: #c2242a;">3</a></li>
+    		<li><a href="#" style="color: #c2242a;">&raquo;</a></li>
+		</ul>
 </section>
-
+</div>
 
 <footer>
 		<p>
@@ -103,9 +126,19 @@
 		</p>
 		<a href="">Mention legal</a>
 		<a href="">Contact</a>
-		<a href=""><img src="http://icon-icons.com/icons2/836/PNG/512/Facebook_icon-icons.com_66805.png" alt="facebook" /></a>
+		<a href=""><img src="../images/facebook.png" alt="facebook" /></a>
 </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(window).resize(function () { 
+	   $('body').css('padding-top', parseInt($('header').css("height"))+10);
+	});
+
+	$(window).ready(function () { 
+	   $('body').css('padding-top', parseInt($('header').css("height"))+10);         
+	});
+</script>
 </body>
 </html>
