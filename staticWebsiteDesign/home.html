@@ -10,6 +10,22 @@
 			padding-top: 30px;
 			padding-bottom: 30px;
 		}
+		footer {
+			border-top-style: solid;
+			border-top-width: 0.5px;
+			background-color: #f8f8f8;
+    		border-color: #e7e7e7;
+    		margin-left: -15px;
+    		margin-right: -15px;
+		}
+
+		footer div div a {
+			text-align: center;
+		}
+		footer div div p {
+			text-align: center;
+		}
+
 	</style>
 </head>
 <body>
@@ -18,14 +34,16 @@
 <nav class="container">
 	
 	<div class="nav navbar-header" style="min-height: 80px;">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="navbar">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="navbar" style="">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 		</button>
-		<div class="nav navbar-brand" style="padding: 0px 15px 0px 5px;">
-		<img src="../images/LogoBDE.png" alt="BDE Logo" style="display: inline; min-height: 50px; max-height: 80px; width: auto; padding-right: 15px;" />BDE Website</div>
+		<div class="nav navbar-brand" style="padding: 0px 15px 0px 5px; width: auto; display: inline-block;">
+			<img src="../images/LogoBDE.png" alt="BDE Logo" class="img-responsive" style="display: inline; max-height: 80px; width: auto; padding-right: 15px;" />
+			<span style="">BDE Website</span>
+		</div>
 	</div>
 	<div id="mainMenu" class="navbar-collapse">
 		<ul class="nav navbar-nav navbar-left">
@@ -92,18 +110,17 @@
 
 
 
-<footer>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-		<a href="">Mention legal</a>
-		<a href="">Contact</a>
-		<a href=""><img src="http://icon-icons.com/icons2/836/PNG/512/Facebook_icon-icons.com_66805.png" alt="facebook" class="img-responsive" /></a>
+<footer class="footer">
+	<div class="container-fluid">
+		<div class="row">
+			<p class="col-sm-3">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			</p>
+			<a href="" class="col-sm-3">Mention legal</a>
+			<a href="" class="col-sm-3">Contact</a>
+			<a href="" class="col-sm-3" style="display: inline;"><img src="../images/facebook.png" alt="facebook" class="img-responsive" style="display: inline;" /></a>
+		</div>
+	</div>
 </footer>
 </div>
 
