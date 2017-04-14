@@ -4,30 +4,41 @@
 	<meta charset="utf-8">
 	<title>home</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<header class="navbar navbar-default navbar-static-top">
 
-<header>
-	<img src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/12552933_937571146327025_6130196920571711809_n.jpg?oh=aa8c4610ff933816ca276a4803aba1b4&oe=598C9FC5" alt="BDE Logo" />
-	<h1>BDE Website</h1>
-	<nav>
-		<ul>
-			<li><a href="#">Accueil</a></li>
+<nav class="container">
+	
+	<div class="nav navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+		</button>
+		<a class="nav navbar-brand" style="padding: 0px 15px 0px 5px;">
+		<img src="../images/Logo BDE.png" alt="BDE Logo" style="display: inline; height: 50px; width: auto; padding-right: 15px;" />BDE Website</a>
+	</div>
+	<div id="mainMenu" class="navbar-collapse">
+		<ul class="nav navbar-nav navbar-left">
+			<li class="active"><a href="#">Accueil</a></li>
 			<li><a href="futurActivities.html">Activities</a></li>
 			<li><a href="shop.html">Shop</a></li>
 			<li><a href="">BDE Members</a></li>
 		</ul>
-		<ul>
+		<ul class="nav navbar-nav navbar-right">
 			<li><a href="">log out</a></li>
-			<li><a href="">log in</a></li>
+			<li><a href="profilInscription.html">log in</a></li>
 			<li><a href="">FR</a></li>
 			<li><a href="">EN</a></li>
 		</ul>
+		</div>
 	</nav>
-
-
 </header>
 
+<div class="body">
 <section>
 		<article>
 			<h1>Welcome to BDE WebSite of Exia Cesi Lyon</h1>
@@ -71,6 +82,7 @@
 </aside>
 
 
+
 <footer>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -84,7 +96,34 @@
 		<a href="">Contact</a>
 		<a href=""><img src="http://icon-icons.com/icons2/836/PNG/512/Facebook_icon-icons.com_66805.png" alt="facebook" /></a>
 </footer>
+</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+	$(function(){
+		var position_top_raccourci = $(".body").offset().top;
+
+	$(window).scroll(function (event) {
+		// A chaque fois que l'utilisateur va scroller (descendre la page)
+		var y = $(this).scrollTop(); // On récupérer la valeur du scroll vertical
+
+		//si cette valeur > à 200 on ajouter la class
+		if (y >= 1) {
+			$('header').removeClass('navbar-static-top');
+			$('header').addClass('navbar-fixed-top');
+			$('.body').addClass('relative');
+			$('.relative').css({position : 'relative'});
+			$('.relative').offset({top : position_top_raccourci});
+		} else {
+		  // sinon, on l'enlève
+		  	$('.body').removeClass('relative');
+			$('header').removeClass('navbar-fixed-top');
+			$('header').addClass('navbar-static-top');
+		}
+	});
+ });
+</script>
 </body>
 </html>
