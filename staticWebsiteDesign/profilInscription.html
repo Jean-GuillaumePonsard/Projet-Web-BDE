@@ -4,49 +4,80 @@
 	<meta charset="utf-8">
 	<title>Profil Inscription</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		header div .nav li a {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	</style>
 </head>
 <body>
+<header class="navbar navbar-default navbar-fixed-top" style="min-height: 80px;">
 
-<header>
-	<img src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/12552933_937571146327025_6130196920571711809_n.jpg?oh=aa8c4610ff933816ca276a4803aba1b4&oe=598C9FC5" alt="BDE Logo" />
-	<h1>BDE Website</h1>
-	<nav>
-		<ul>
-			<li><a href="home.html">Accueil</a></li>
+<nav class="container">
+	
+	<div class="nav navbar-header" style="min-height: 80px;">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+		</button>
+		<div class="nav navbar-brand" style="padding: 0px 15px 0px 5px;">
+		<img src="../images/LogoBDE.png" alt="BDE Logo" style="display: inline; min-height: 50px; max-height: 80px; width: auto; padding-right: 15px;" />BDE Website</div>
+	</div>
+	<div id="mainMenu" class="navbar-collapse">
+		<ul class="nav navbar-nav navbar-left">
+			<li class="active"><a href="#">Home</a></li>
 			<li><a href="futurActivities.html">Activities</a></li>
 			<li><a href="shop.html">Shop</a></li>
 			<li><a href="">BDE Members</a></li>
 		</ul>
-		<ul>
+		<ul class="nav navbar-nav navbar-right">
 			<li><a href="">log out</a></li>
-			<li><a href="profil.html">UserID</a></li>
+			<li><a href="profilInscription.html">log in</a></li>
 			<li><a href="">FR</a></li>
 			<li><a href="">EN</a></li>
 		</ul>
+		</div>
 	</nav>
-
-
 </header>
 
-<section>
-		<article>
-			<form>
-				First Name:
-				<input type="text" name="firstName">
-
-				Last Name:
-				<input type="text" name="lastName">
-				Mail Address:
-				<input type="text" name="mail">
-				Password:
-				<input type="password" name="password">
-				Confirm your password
-				<input type="password" name="passwordConfirmation">
-				<input type="submit" name="subscribeForm">
+<div class="container-fluid">
+<section class="jumbotron col-md-6 col-md-offset-3">
+	<article class="lead row">
+		<div  class="col-md-10 col-md-offset-1">
+			<form class="form-group ">
+				<h2 class="col-md-10 col-md-offset-1">Registration Form</h2>
+				<div class="row col-md-10 col-md-offset-1" style="margin-top: 5%; ">
+					First Name:
+					<input type="text" name="firstName" class="form-control">
+				</div>
+				<div class="row col-md-10 col-md-offset-1">
+					Last Name:
+					<input type="text" name="lastName" class="form-control">
+				</div>
+				<div class="row col-md-10 col-md-offset-1">
+					Mail Address:
+					<input type="text" name="mail" class="form-control">
+				</div>
+				<div class="row col-md-10 col-md-offset-1">
+					Password:
+					<input type="password" name="password" class="form-control">
+				</div>
+				<div class="row col-md-10 col-md-offset-1">
+					Confirm your password
+					<input type="password" name="passwordConfirmation" class="form-control">
+				</div>
+				<div class="row col-md-4 col-md-offset-7">
+					<input type="submit" name="subscribeForm" value="Validate" class="btn btn-primary" style="width: 100%; background-color: #bb233c; border-width: 1.5px; border-color: #a01128;">
+				</div>
 			</form>
-		</article>
+		</div>
+	</article>
 </section>
-
+</div>
 
 <footer>
 		<p>
@@ -59,9 +90,21 @@
 		</p>
 		<a href="">Mention legal</a>
 		<a href="">Contact</a>
-		<a href=""><img src="http://icon-icons.com/icons2/836/PNG/512/Facebook_icon-icons.com_66805.png" alt="facebook" /></a>
+		<a href=""><img src="../images/facebook.png" alt="facebook" class="img-responsive" /></a>
 </footer>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$(window).resize(function () { 
+	   $('body').css('padding-top', parseInt($('header').css("height"))+10);
+	});
+
+	$(window).ready(function () { 
+	   $('body').css('padding-top', parseInt($('header').css("height"))+10);         
+	});
+</script>
 </body>
 </html>
