@@ -4,25 +4,36 @@
 	<meta charset="utf-8">
 	<title>home</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- link rel="stylesheet" type="text/css" href="home.css" -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
 		header div .nav li a {
 			padding-top: 30px;
 			padding-bottom: 30px;
 		}
-		footer {
-			border-top-style: solid;
-			border-top-width: 0.5px;
-			background-color: #f8f8f8;
-    		border-color: #e7e7e7;
-    		margin-left: -15px;
-    		margin-right: -15px;
+		html{
+			position: relative;
+			min-height: 100%;
 		}
 
-		footer div div a {
+		body{
+			margin-bottom: 0px;
+		}
+
+
+		.footer {
+			background-color: #f5f5f5;
+			position: absolute;
+		    bottom: 0;
+		    width: 100%;
+		    padding-top: 15px;
+		}
+
+		.footer div div p a {
 			text-align: center;
 		}
-		footer div div p {
+
+		.footer div div p {
 			text-align: center;
 		}
 
@@ -107,7 +118,7 @@
 </aside>
 
 </div>
-
+</div>
 
 
 <footer class="footer">
@@ -116,13 +127,14 @@
 			<p class="col-sm-3">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 			</p>
-			<a href="" class="col-sm-3">Mention legal</a>
-			<a href="" class="col-sm-3">Contact</a>
-			<a href="" class="col-sm-3" style="display: inline;"><img src="../images/facebook.png" alt="facebook" class="img-responsive" style="display: inline;" /></a>
+			<p class="col-sm-3"><a href="">Mention legal</a></p>
+			<p class="col-sm-3"><a href="" >Contact</a></p>
+			<p class="col-sm-3"><a href="" style="display: inline;"><img src="../images/facebook.png" alt="facebook" class="img-responsive" style="display: inline;" /></a></p>
 		</div>
 	</div>
 </footer>
-</div>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -130,10 +142,12 @@
 <script type="text/javascript">
 	$(window).resize(function () { 
 	   $('body').css('padding-top', parseInt($('header').css("height"))+10);
+	   $('body').css('margin-bottom', parseInt($('.footer').css("height"))+10);
 	});
 
 	$(window).ready(function () { 
-	   $('body').css('padding-top', parseInt($('header').css("height"))+10);         
+	   $('body').css('padding-top', parseInt($('header').css("height"))+10); 
+	   $('body').css('margin-bottom', parseInt($('.footer').css("height"))+10);        
 	});
 </script>
 </body>
