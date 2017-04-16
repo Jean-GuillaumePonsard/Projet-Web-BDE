@@ -2,55 +2,57 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Profil</title>
+	<title>Past Activities</title>
+	
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style type="text/css">
-		header div .nav li a {
-			padding-top: 30px;
-			padding-bottom: 30px;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="styleEssai.css">
 </head>
-<body>
-<header class="navbar navbar-default navbar-fixed-top" style="min-height: 80px;">
 
-<nav class="container">
+
+<body>
+
+<header class="navbar navbar-default navbar-fixed-top" style="min-height: 80px; margin: 0;">
+
+	<nav class="container">
 	
-	<div class="nav navbar-header" style="min-height: 80px;">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-		</button>
-		<div class="nav navbar-brand" style="padding: 0px 15px 0px 5px;">
-		<img src="../images/LogoBDE.png" alt="BDE Logo" style="display: inline; min-height: 50px; max-height: 80px; width: auto; padding-right: 15px;" />BDE Website</div>
-	</div>
-	<div id="mainMenu" class="navbar-collapse">
-		<ul class="nav navbar-nav navbar-left">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="futurActivities.html">Activities</a></li>
-			<li><a href="shop.html">Shop</a></li>
-			<li><a href="">BDE Members</a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li><a href="">log out</a></li>
-			<li><a href="profilInscription.html">log in</a></li>
-			<li><a href="">FR</a></li>
-			<li><a href="">EN</a></li>
-		</ul>
+		<div class="nav navbar-header" style="min-height: 80px;">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+			<div class="nav navbar-brand" style="padding: 0px 15px 0px 5px;">
+				<img src="../images/LogoBDE.png" alt="BDE Logo" style="display: inline; min-height: 50px; max-height: 80px; width: auto; padding-right: 15px;" />BDE Website
+			</div>
+		</div>
+		<div id="mainMenu" class="navbar-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="active"><a href="home.html">Home</a></li>
+				<li><a href="futurActivities.html">Activities</a></li>
+				<li><a href="shop.html">Shop</a></li>
+				<li><a href="">BDE Members</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="">Log out</a></li>
+				<li><a href="profil.html">Profil</a></li>
+				<li><a href="">FR</a></li>
+				<li><a href="">EN</a></li>
+			</ul>
 		</div>
 	</nav>
 </header>
-<div class="container-fluid">
-<section class="jumbotron col-md-10 col-md-offset-1">
+
+<div class="container-fluid body" style="background: black;padding: 0;background-image:url(https://images3.alphacoders.com/245/245765.jpg);overflow: hidden;min-height: 100%;">
+<div class="row">
+<section class="jumbotron col-md-10 col-md-offset-1" style="background-color: rgba(190, 190, 190, 0.8);margin-bottom: 0;">
 		<article class="row" >
 			<div class="col-md-2 col-md-offset-2" >
 				<img class="img-thumbnail" ;" src="../images/ProfilAB.png" alt="profilePicture">
-				<input type="file" class="form-control-file">
+				<input type="file" class="form-control-file" style="width: 100%;">
 			</div>
-			<div class="col-md-4 col-md-offset-3">Name + status (student or BDE, CESI team)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			<div class="col-md-5 col-md-offset-2">Name + status (student or BDE, CESI team)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -59,23 +61,23 @@
 		</article>
 
 		<article class="lead row" style="margin-top: 5%; line-height: 100%;">
-			<div class="col-md-6 col-md-offset-3"  style="border-style: solid; border-radius: 10px;  background-color: #cb625c;">
-			<form class="form-group row col-md-10 col-md-offset-1" style="margin-top: 5%;">
+			<div class="col-md-6 col-md-offset-3"  style=" border-radius: 10px;  background-color: white;">
+			<form class="form-group row col-md-10 col-md-offset-1" style="margin-top: 5%;color: #bb233c;">
 				First Name:
 				<input type="text" name="firstName" class="form-control">
 				<input type="submit" name="Modify" value="modify" class="btn btn-primary col-md-3 col-md-offset-9" style="background-color: #bb233c; border-width: 1.5px; border-color: #a01128; line-height: 100%;">
 			</form>
-			<form class="form-group row col-md-10  col-md-offset-1">
+			<form class="form-group row col-md-10  col-md-offset-1" style="color: #bb233c;">
 				Last Name:
 				<input type="text" name="lastName" class="form-control" >
 				<input type="submit" name="Modify" value="modify" class="btn btn-primary col-md-3 col-md-offset-9" style="background-color: #bb233c; border-width: 1.5px; border-color: #a01128; line-height: 100%;">
 			</form>
-			<form class="form-group row col-md-10  col-md-offset-1">
+			<form class="form-group row col-md-10  col-md-offset-1" style="color: #bb233c;">
 				Promotion:
 				<input type="text" name="promotion" class="form-control">
 				<input type="submit" name="Modify" value="modify" class="btn btn-primary col-md-3 col-md-offset-9" style="background-color: #bb233c; border-width: 1.5px; border-color: #a01128; line-height: 100%;">
 			</form>
-			<form class="form-group row col-md-10  col-md-offset-1">
+			<form class="form-group row col-md-10  col-md-offset-1" style="color: #bb233c;">
 				Mail Address:
 				<input type="text" name="mail" class="form-control">
 				<input type="submit" name="Modify" value="modify" class="btn btn-primary col-md-3 col-md-offset-9" style="background-color: #bb233c; border-width: 1.5px; border-color: #a01128; line-height: 100%;">
@@ -83,21 +85,20 @@
 			</div>
 		</article>
 </section>
-
 </div>
-<footer>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-		<a href="">Mention legal</a>
-		<a href="">Contact</a>
-		<a href=""><img src="../images/facebook.png" alt="facebook" class="img-responsive" /></a>
+<footer class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<p class="col-sm-3">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				</p>
+				<p class="col-sm-3"><a href=""><img src="../images/justice-logo.png " alt="contact" class="img-responsive" style="display: inline;margin-right: 2%;">Mention legal</a></p>
+				<p class="col-sm-3"><a href="" ><img src="../images/logo-email.png " alt="contact" class="img-responsive" style="display: inline;margin-right: 2%;"> Contact</a></p>
+				<p class="col-sm-3"><a href="" style="display: inline;"><img src="../images/facebook.png" alt="facebook" class="img-responsive" style="display: inline;" /></a></p>
+			</div>
+		</div>
 </footer>
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -105,11 +106,11 @@
 
 <script type="text/javascript">
 	$(window).resize(function () { 
-	   $('body').css('padding-top', parseInt($('header').css("height"))+10);
+	   $('body').css('padding-top', parseInt($('header').css("height")));
 	});
 
 	$(window).ready(function () { 
-	   $('body').css('padding-top', parseInt($('header').css("height"))+10);         
+	   $('body').css('padding-top', parseInt($('header').css("height")));         
 	});
 </script>
 </body>

@@ -2,43 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>home</title>
+	<title>Home</title>
+	
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- link rel="stylesheet" type="text/css" href="home.css" -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style type="text/css">
-		header div .nav li a {
-			padding-top: 30px;
-			padding-bottom: 30px;
-		}
-		html{
-			position: relative;
-			min-height: 100%;
-		}
-
-		body{
-			margin-bottom: 0px;
-		}
-
-
-		.footer {
-			background-color: #f5f5f5;
-			position: absolute;
-		    bottom: 0;
-		    width: 100%;
-		    padding-top: 15px;
-		}
-
-		.footer div div p a {
-			text-align: center;
-		}
-
-		.footer div div p {
-			text-align: center;
-		}
-
-	</style>
+	<link rel="stylesheet" type="text/css" href="styleEssai.css">
 </head>
+
 <body>
 <header class="navbar navbar-default navbar-fixed-top" style="min-height: 80px;">
 
@@ -64,8 +34,8 @@
 			<li><a href="">BDE Members</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="">log out</a></li>
-			<li><a href="profilInscription.html">log in</a></li>
+			<li><a href="connexion.html">Log in</a></li>
+			<li><a href="profilInscription.html">Sign up</a></li>
 			<li><a href="">FR</a></li>
 			<li><a href="">EN</a></li>
 		</ul>
@@ -73,12 +43,12 @@
 	</nav>
 </header>
 
-<div class="body container-fluid">
+<div class="container-fluid body" style="background: black;padding: 0;background-image:url(https://images3.alphacoders.com/245/245765.jpg);overflow: hidden;min-height: 100%;border-style: solid;">
 <div class="row">
-<section class="jumbotron col-md-7 col-md-offset-1">
+<section class="jumbotron col-md-7 col-md-offset-1" style="margin-bottom: 0;background-color: rgba(190, 190, 190, 0.8);min-height: 100%;">
 		<article>
-			<h1>Welcome to BDE WebSite of Exia Cesi Lyon</h1>
-			<img src="" alt="BDE Members">
+			<h1 style="background: #bb233c;color: white;text-align: center;padding: 2%;border-radius: 10px;">Welcome </br>to BDE WebSite</br> of Exia Cesi Lyon</h1>
+			<img src="https://images.alphacoders.com/555/555941.jpg" alt="BDE Members" style="width: 100%;margin-bottom: 5%;">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -88,9 +58,9 @@
 		</article>
 </section>
 
-<aside class="jumbotron col-md-2 col-md-offset-1">
-	<div>
-		<h3>Futur Events</h3>
+<aside class="jumbotron col-md-2 col-md-offset-1" style="margin-bottom: 0;background-color: rgba(190, 190, 190, 0.8);min-height: 100%;padding: 3%;">
+	<div style="background: white;margin-bottom: 10%; border-radius: 10px;padding: 3%;">
+		<h3 style="text-align: center;color: #bb233c;">Futur Events</h3>
 		<ul>
 			<li>Event 1 - 13/04/2017</li>
 			<li>Event 2 - 13/04/2017</li>
@@ -98,8 +68,8 @@
 		</ul>
 	</div>
 
-	<div>
-		<h3>Last Events</h3>
+	<div style="background: white;margin-bottom: 10%; border-radius: 10px;padding: 3%;">
+		<h3 style="text-align: center;color: #bb233c;">Last Events</h3>
 		<ul>
 			<li>Event 1 - 13/04/2017</li>
 			<li>Event 2 - 13/04/2017</li>
@@ -107,8 +77,8 @@
 		</ul>
 	</div>
 
-	<div>
-		<h3>New goodies</h3>
+	<div style="background: white;margin-bottom: 10%; border-radius: 10px;padding: 3%;">
+		<h3 style="text-align: center;color: #bb233c;">New goodies</h3>
 		<ul>
 			<li>Event 1 - 13/04/2017</li>
 			<li>Event 2 - 13/04/2017</li>
@@ -118,21 +88,22 @@
 </aside>
 
 </div>
+<footer class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<p class="col-sm-3">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				</p>
+				<p class="col-sm-3"><a href=""><img src="../images/justice-logo.png " alt="contact" class="img-responsive" style="display: inline;margin-right: 2%;">Mention legal</a></p>
+				<p class="col-sm-3"><a href="" ><img src="../images/logo-email.png " alt="contact" class="img-responsive" style="display: inline;margin-right: 2%;"> Contact</a></p>
+				<p class="col-sm-3"><a href="" style="display: inline;"><img src="../images/facebook.png" alt="facebook" class="img-responsive" style="display: inline;" /></a></p>
+			</div>
+		</div>
+	</footer>
 </div>
 
 
-<footer class="footer">
-	<div class="container-fluid">
-		<div class="row">
-			<p class="col-sm-3">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-			</p>
-			<p class="col-sm-3"><a href="">Mention legal</a></p>
-			<p class="col-sm-3"><a href="" >Contact</a></p>
-			<p class="col-sm-3"><a href="" style="display: inline;"><img src="../images/facebook.png" alt="facebook" class="img-responsive" style="display: inline;" /></a></p>
-		</div>
-	</div>
-</footer>
+
 
 
 
@@ -141,13 +112,13 @@
 
 <script type="text/javascript">
 	$(window).resize(function () { 
-	   $('body').css('padding-top', parseInt($('header').css("height"))+10);
-	   $('body').css('margin-bottom', parseInt($('.footer').css("height"))+10);
+	   $('body').css('padding-top', parseInt($('header').css("height")));
+	   //$('body').css('margin-bottom', parseInt($('.footer').css("height")));
 	});
 
 	$(window).ready(function () { 
-	   $('body').css('padding-top', parseInt($('header').css("height"))+10); 
-	   $('body').css('margin-bottom', parseInt($('.footer').css("height"))+10);        
+	   $('body').css('padding-top', parseInt($('header').css("height"))); 
+	  //$('body').css('margin-bottom', parseInt($('.footer').css("height")));        
 	});
 </script>
 </body>
