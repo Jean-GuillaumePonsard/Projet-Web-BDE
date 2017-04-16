@@ -41,7 +41,7 @@
 </header>
 
 <div class="container-fluid body" style="background: black;padding: 0;background-image:url(https://images3.alphacoders.com/245/245765.jpg);overflow: hidden;min-height: 100%;border-style: solid;">
-	<div class="row essai" >
+	<div class="row " >
 	<section class="jumbotron col-md-8 col-md-offset-2" style="margin-bottom: 0;background-color: rgba(190, 190, 190, 0.8);min-height: 100%;">
 		<article class="lead row">
 			<div  class="col-md-10">
@@ -88,13 +88,7 @@
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-$(function(){
-	var taille = $(".body").height() ;
-	var tf = $(".footer").height();
-	var th = $("header").height();
-	var resultat = taille - tf -th;
-        $(".essai").innerHeight(resultat) ;
-     }); 
+
 	$(window).resize(function () { 
 	   $('body').css('padding-top', parseInt($('header').css("height")));
 	});
