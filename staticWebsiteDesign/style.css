@@ -93,17 +93,45 @@ h1.home-title
 	padding: 2%;
 	border-radius: 10px;
 }
+
 img.img-responsive.img-home
 {
 	width: 100%;
 	margin-bottom: 5%;
 }
 
-.col-md-10.col-md-offset-1
+section.col-md-10.col-md-offset-1
 {
 	margin-bottom: 0;
 	background-color: rgba(190, 190, 190, 0.8);
 	min-height: 100%;
+}
+
+h1.col-md-10.col-md-offset-1.proposalform-title
+{
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.lead.row.proposalform-part
+{
+	margin-bottom: 5%;
+}
+
+.row.col-md-6.col-md-offset-1.proposalform-part2
+{
+	margin-top: 2%;
+}
+
+.img-responsive.proposalform-img
+{
+	width:  100%;
+	height: auto;
+}
+.custom-file-input
+{
+	width: 100%;
 }
 
 .col-xs-10.col-xs-offset-1.legal-notices-article
