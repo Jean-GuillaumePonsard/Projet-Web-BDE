@@ -30,16 +30,17 @@ header
 
 .navActivity
 {
+	background: #c2242a;
+	border-radius: 5px;>
 	text-align: center;
 	margin-top: 2%;
 	
 }
-.nav.navbar-nav.contenu 
+.nav.navbar-nav.contenu li
 {
 	float: none;
 	display: inline-block;
-    
-vertical-align: top;
+    vertical-align: top;
 
 }
 
@@ -169,10 +170,12 @@ h2.col-xs-12.legal-notices-title
 	margin-bottom: 5%;
 	margin-top: 5%;
 }
+
 .col-md-10.col-md-offset-2.contact-title
 {
 	text-align: center;
 }
+
 .row.col-md-12.col-md-offset-1.contact-part
 {
 	margin-top: 5%;
@@ -180,13 +183,58 @@ h2.col-xs-12.legal-notices-title
 	 color: #bb233c;
 }
 
+.sidebar.col-xs-2
+{
+	margin-top: 10%;
+}
+
+h3.list-group-item.list-group-title
+{
+	background-color: #bebebe;
+}
+
+.list-group-product
+{
+	color: #c2242a;
+}
+
 .btn.btn-primary
 {
-	width: 100%;
+	
 	background-color: #bb233c;
 	border-width: 1.5px;
 	border-color: #a01128;
 	line-height: 100%;	
+}
+
+.row.col-sm-6.col-md-offset-3.shop-pagination
+{
+	text-align: center;
+}
+
+ul.pagination li a.page-selector
+{
+	color: #c2242a;
+}
+
+.col-xs-9.essai
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+}
+.row.shop-section
+{
+	margin-bottom: 5%;
+}
+
+.img-responsive.img-product
+{
+	width: 100%;
+}
+
+.media-heading
+{
+	color: #bb233c;
 }
 
 aside.jumbotron.col-md-2.col-md-offset-1

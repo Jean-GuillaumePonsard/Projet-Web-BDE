@@ -6,13 +6,13 @@
 	
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="styleEssai.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 
 <body>
 
-<header class="navbar navbar-default navbar-static-top" style="min-height: 80px; margin: 0;">
+<header class="navbar navbar-default navbar-fixed-top" style="min-height: 80px; margin: 0;">
 
 	<nav class="container">
 	
@@ -55,10 +55,10 @@
 		</div>
 	</nav>
 
-	<div class="row" >
+	<div class="row " >
 	<div class="col-md-10 col-md-offset-1">
 
-		<section class="row" style="background-color: rgba(190, 190, 190, 0.8);">
+		<section class="row essai" style="background-color: rgba(190, 190, 190, 0.8);">
 			
 			<div class="row">
 				<h1 class="col-md-12 board-title" style="text-align: center;margin-bottom: 5%;margin-top: 5%;">Past Activities</h1>
@@ -161,29 +161,22 @@
 
 <script>
 	$(function(){
-		var position_top_raccourci = $(".body").offset().top;
+	var taille = $(".body").height() ;
+	var tf = $(".footer").height();
+	var th = $("header").height();
+	var resultat = taille - tf -th;
+         $(".essai").css('min-height', resultat- 16) ;
+      var position_top_raccourci = $(".body").offset().top;
         var taille = $(".description").height() ;
         $(".date").innerHeight(taille);
-
-	$(window).scroll(function (event) {
-		// A chaque fois que l'utilisateur va scroller (descendre la page)
-		var y = $(this).scrollTop(); // On récupérer la valeur du scroll vertical
-
-		//si cette valeur > à 200 on ajouter la class
-		if (y >= 1) {
-			$('header').removeClass('navbar-static-top');
-			$('header').addClass('navbar-fixed-top');
-			$('.body').addClass('relative');
-			//$('.relative').css({position : 'relative'});
-			$('.body.relative').offset({top : position_top_raccourci});
-		} else {
-		  // sinon, on l'enlève
-		  	$('.body').removeClass('relative');
-			$('header').removeClass('navbar-fixed-top');
-			$('header').addClass('navbar-static-top');
-		}
+     }); 
+	$(window).resize(function () { 
+	   $('body').css('padding-top', parseInt($('header').css("height")));
 	});
- });
+
+	$(window).ready(function () { 
+	   $('body').css('padding-top', parseInt($('header').css("height")));         
+	});
 </script>
 
 
