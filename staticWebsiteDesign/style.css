@@ -30,22 +30,27 @@ header
 
 .navActivity
 {
-	background: #c2242a;
-	border-radius: 5px;>
+	
 	text-align: center;
 	margin-top: 2%;
+	background:  #c2242a;
+	border-radius: 5px;
 	
 }
-.nav.navbar-nav.contenu li
+
+.nav.navbar-nav.contenu
 {
+	
 	float: none;
 	display: inline-block;
-    vertical-align: top;
+	vertical-align: top;
+
 
 }
 
 .navActivity ul li a{
 	color: white;
+
 }
 
 
@@ -257,6 +262,80 @@ h3.aside-title
 {
 	text-align: center;
 	color: #bb233c;
+}
+
+.activity-section
+{
+	background-color: rgba(190, 190, 190, 0.8);
+}
+
+.activity-article
+{
+	background: white;
+	margin-bottom: 5%;
+	border-radius: 10px;
+	height: 10%;
+	font-size: 100%;
+}
+
+.user-name
+{
+	background: #bb233c;
+	text-align: center;
+	color: white;
+	border-radius: 30px;
+	padding: 10%;
+}
+
+.description-title
+{
+	color: #bb233c;
+}
+
+.bdemembers-section
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+}
+
+.bdemembers-part
+{
+	margin-bottom: 5%;
+}
+
+img.img-responsive.img-bdemembers
+{
+	width: 100%;
+}
+
+.col-md-6.col-md-offset-3.registration-section
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+}
+
+.registration-article
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.registration-title
+{
+	text-align: center;
+}
+
+.registration-info
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+	color: #bb233c;
+}
+
+.validate
+{
+	width: 100%;
 }
 
 .footer 
