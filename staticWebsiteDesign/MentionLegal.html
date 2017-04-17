@@ -150,12 +150,12 @@
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-$(function(){
+	$(function(){
 	var taille = $(".body").height() ;
 	var tf = $(".footer").height();
 	var th = $("header").height();
 	var resultat = taille - tf -th;
-        $(".essai").innerHeight(resultat) ;
+        $(".essai").css('min-height', resultat- 16) ;
      }); 
 	$(window).resize(function () { 
 	   $('body').css('padding-top', parseInt($('header').css("height")));

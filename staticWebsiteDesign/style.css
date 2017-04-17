@@ -120,7 +120,7 @@ h1.col-md-10.col-md-offset-1.proposalform-title
 	margin-bottom: 5%;
 }
 
-.lead.row.proposalform-part
+.row.proposalform-part
 {
 	margin-bottom: 5%;
 }
@@ -153,7 +153,7 @@ h1.col-md-10.col-md-offset-1.proposalform-title
 	min-height: 100%;
 }
 
-.lead.row.contact-article
+.row.contact-article
 {
 	margin-top: 5%;
 	margin-bottom: 5%;
@@ -286,6 +286,14 @@ h3.aside-title
 	border-radius: 30px;
 	padding: 10%;
 }
+.date
+{
+	background: #bb233c;
+	text-align: center;
+	color: white;
+	border-radius: 30px;
+	padding: 10%;
+}
 
 .description-title
 {
@@ -337,6 +345,91 @@ img.img-responsive.img-bdemembers
 {
 	width: 100%;
 }
+
+.profil-section
+{
+	background-color: rgba(190, 190, 190, 0.8);
+	margin-bottom: 0;
+}
+
+.profil-article
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+.profil-title
+{
+	text-align: center;
+}
+
+.form-control-file
+{
+	width: 100%;	
+}
+
+.profil-part
+{
+	border-radius: 10px;
+	background-color: white;
+}
+
+.profil-info1
+{
+	margin-top: 5%;
+	color: #bb233c;
+}
+
+.profil-info
+{
+	color: #bb233c;
+}
+
+.connection-section
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+}
+
+.connection-title
+{
+	text-align: center;
+	margin-top: 5%
+}
+
+.connection-info1
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+	color: #bb233c;
+}
+
+.connection-info
+{
+	color: #bb233c;
+}
+
+.cart-section
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+}
+
+.cart-title
+{
+	text-align: center;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+
+.cart-info
+{
+	color: #bb233c;
+	background-color: #bebebe;
+	text-align: center;
+}
+
 
 .footer 
 {

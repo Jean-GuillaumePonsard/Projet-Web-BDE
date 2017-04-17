@@ -101,23 +101,23 @@
 	</footer>
 </div>
 
-
-
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+	$(function(){
+	var taille = $(".body").height() ;
+	var tf = $(".footer").height();
+	var th = $("header").height();
+	var resultat = taille - tf -th;
+        $(".essai").css('min-height', resultat- 16) ;
+     }); 
 	$(window).resize(function () { 
 	   $('body').css('padding-top', parseInt($('header').css("height")));
-	   //$('body').css('margin-bottom', parseInt($('.footer').css("height")));
 	});
 
 	$(window).ready(function () { 
-	   $('body').css('padding-top', parseInt($('header').css("height"))); 
-	  //$('body').css('margin-bottom', parseInt($('.footer').css("height")));        
+	   $('body').css('padding-top', parseInt($('header').css("height")));         
 	});
 </script>
 </body>

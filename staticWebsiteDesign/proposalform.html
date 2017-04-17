@@ -51,7 +51,7 @@
 		<div  class="col-md-12">
 			<form class="form-group ">
 			<h1 class="col-md-10 col-md-offset-1 proposalform-title">Proposal Form</h1>
-			<div class="lead row proposalform-part1">
+			<div class="row proposalform-part1">
 				<div class=" row col-md-3 col-md-offset-1">
 					<img class="img-thumbnail" src="../images/ProfilAB.png" alt="activityPicture" class="img-responsive proposalform-img">
 					<label class="custom-file" >
@@ -88,7 +88,6 @@
 
 
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -98,7 +97,7 @@
 	var tf = $(".footer").height();
 	var th = $("header").height();
 	var resultat = taille - tf -th;
-        $(".essai").innerHeight(resultat) ;
+        $(".essai").css('min-height', resultat- 16) ;
      }); 
 	$(window).resize(function () { 
 	   $('body').css('padding-top', parseInt($('header').css("height")));

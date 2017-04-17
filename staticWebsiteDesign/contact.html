@@ -43,7 +43,7 @@
 <div class="container-fluid body">
 	<div class="row " >
 	<section class="col-md-8 col-md-offset-2">
-		<article class="lead row contact-article">
+		<article class="row contact-article">
 			<div  class="col-md-10">
 				<form class="form-group">
 						<h1 class="col-md-10 col-md-offset-2 contact-title">Contact</h1>
@@ -88,7 +88,13 @@
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-
+	$(function(){
+	var taille = $(".body").height() ;
+	var tf = $(".footer").height();
+	var th = $("header").height();
+	var resultat = taille - tf -th;
+        $(".essai").css('min-height', resultat- 16) ;
+     }); 
 	$(window).resize(function () { 
 	   $('body').css('padding-top', parseInt($('header').css("height")));
 	});
