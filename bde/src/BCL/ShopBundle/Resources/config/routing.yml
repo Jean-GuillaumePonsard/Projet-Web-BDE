@@ -1,3 +1,3 @@
 bcl_shop_homepage:
     path:     /
-    defaults: { _controller: BCLShopBundle:Default:index }
+    defaults: { _controller: BCLShopBundle:Shop:index }

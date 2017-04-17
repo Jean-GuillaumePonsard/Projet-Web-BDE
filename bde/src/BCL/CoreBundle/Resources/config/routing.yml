@@ -1,3 +1,7 @@
 bcl_core_homepage:
     path:     /
-    defaults: { _controller: BCLCoreBundle:Default:index }
+    defaults: { _controller: BCLCoreBundle:Core:index }
+
+bcl_core_homepage2:
+    path:     /home
+    defaults: { _controller: BCLCoreBundle:Core:index }
