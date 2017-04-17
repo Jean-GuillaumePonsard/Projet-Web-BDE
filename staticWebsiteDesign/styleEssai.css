@@ -1,7 +1,27 @@
 
+header
+{
+ min-height: 80px;
+}
 
+.nav.navbar-brand
+{
+	padding: 0px 15px 0px 5px;
 
+}
 
+.nav.navbar-header
+{
+ min-height: 80px;
+}
+
+.img-responsive.BDE-image
+{
+	display: inline; 
+	max-height: 80px; 
+	width: auto; 
+	padding-right: 15px;
+}
 
 .body.relative
 {
