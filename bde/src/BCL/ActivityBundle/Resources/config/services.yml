@@ -1,0 +1,4 @@
+services:
+#    bcl_activity.example:
+#        class: BCL\ActivityBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

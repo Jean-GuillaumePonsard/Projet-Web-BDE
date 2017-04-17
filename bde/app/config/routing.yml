@@ -1,3 +1,19 @@
+bcl_core:
+    resource: "@BCLCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bcl_user:
+    resource: "@BCLUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bcl_shop:
+    resource: "@BCLShopBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bcl_activity:
+    resource: "@BCLActivityBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

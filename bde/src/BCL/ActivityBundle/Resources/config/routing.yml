@@ -1,0 +1,3 @@
+bcl_activity_homepage:
+    path:     /
+    defaults: { _controller: BCLActivityBundle:Default:index }
