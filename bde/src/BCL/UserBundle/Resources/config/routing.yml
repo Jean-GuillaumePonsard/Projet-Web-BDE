@@ -2,10 +2,6 @@ bcl_user_homepage:
     path:     /
     defaults: { _controller: BCLUserBundle:User:index }
 
-bcl_user_add:
-    path:     /add/{id}
-    defaults: { _controller: BCLUserBundle:User:addUser }
-
 bcl_user_remove:
     path:     /remove/{id}
     defaults: { _controller: BCLUserBundle:User:removeUser }
