@@ -12,9 +12,9 @@
 			<nav>
 				<ul class="list-group">
 					<h3 class="list-group-item list-group-title">Products</h3>
-					<li class="list-group-item"><a href="{{ path() }}" class="list-group-product">all</a></li>
-					<li class="list-group-item"><a href="{{ path() }}" class="list-group-product">pull-over</a></li>
-					<li class="list-group-item"><a href="{{ path() }}" class="list-group-product">goodie</a></li>
+					<li class="list-group-item"><a href="{#{{ path() }}#}" class="list-group-product">all</a></li>
+					<li class="list-group-item"><a href="{#{{ path() }}#}" class="list-group-product">pull-over</a></li>
+					<li class="list-group-item"><a href="{#{{ path() }}#}" class="list-group-product">goodie</a></li>
 				</ul>
 			</nav>
 		</aside>
@@ -22,11 +22,31 @@
 			<div class="row">
 				<h1 class="col-md-12 board-title">Shop</h1>
 			</div>
+			<div class="row shop-section">
 			{% block article %}
+				{% for article in shop %}
+					<div class="media col-xs-6">
+						<div class="media-left col-xs-4">
+							<img src="{#{{ path() }}#}" alt="article img 1" class="img-responsive img-product"/>
+						</div>
+						<div class="media-body">
+							<h3 class="media-heading">{{ article.name }}</h3>
+							<p>{{ article.description }}</p>
+							{# form #}
+						</div>
+					</div>
+				{% endfor %}
 			{% endblock %}
-
-			
+			</div>
+			<div class="row col-sm-6 col-md-offset-3 shop-pagination">
+				<ul class="pagination">
+					<li><a href="#" class="page-selector">&laquo;</a></li>
+					<li><a href="#" class="page-selector">1</a></li>
+					<li><a href="#" class="page-selector">2</a></li>
+					<li><a href="#" class="page-selector">3</a></li>
+					<li><a href="#"	class="page-selector">&raquo;</a></li>
+				</ul>
+			</div>
 		</section>
 	</div>
-
 	{% endblock %}
