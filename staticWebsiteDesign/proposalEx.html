@@ -2,16 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Profil</title>
+	<title>Proposal example</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="height=device-height, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
 
 
 <body>
-
 <header class="navbar navbar-default navbar-fixed-top">
 
 	<nav class="container">
@@ -45,48 +43,42 @@
 </header>
 
 <div class="container-fluid body">
-<div class="row">
-<section class="col-md-6 col-md-offset-3 profil-section">
-		<article class="row profil-article">
-		<h1 class="col-md-10 col-md-offset-1 profil-title">Profil</h1>
-			<div class="col-md-4 col-md-offset-1" >
-				<img class="img-thumbnail" ;" src="../images/ProfilAB.png" alt="profilePicture">
-				<input type="file" class="form-control-file">
-			</div>
-			<div class="col-md-5 col-md-offset-1">Name + status (student or BDE, CESI team)Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-		</article>
+	<nav class="row navbar" >
+		<div class="col-md-4 col-md-offset-4 navActivity">
+			<ul class="nav navbar-nav contenu">
+				<li><a href="pastActivities.html">Past activities</a></li>
+				<li><a href="futurActivities.html">Future Activities</a></li>
+				<li><a href="proposal.html">Proposal</a></li>
+			</ul>
+		</div>
+	</nav>
 
-		<article class="lead row profil-article">
-			<div class="col-md-10 col-md-offset-1 profil-part">
-			<form class="form-group row col-md-10 col-md-offset-1 profil-info1">
-				First Name:
-				<input type="text" name="firstName" class="form-control">
-				<input type="submit" name="Modify" value="modify" class="btn btn-primary col-md-3 col-md-offset-9">
-			</form>
-			<form class="form-group row col-md-10  col-md-offset-1 profil-info">
-				Last Name:
-				<input type="text" name="lastName" class="form-control" >
-				<input type="submit" name="Modify" value="modify" class="btn btn-primary col-md-3 col-md-offset-9">
-			</form>
-			<form class="form-group row col-md-10  col-md-offset-1 profil-info">
-				Promotion:
-				<input type="text" name="promotion" class="form-control">
-				<input type="submit" name="Modify" value="modify" class="btn btn-primary col-md-3 col-md-offset-9">
-			</form>
-			<form class="form-group row col-md-10  col-md-offset-1 profil-info">
-				Mail Address:
-				<input type="text" name="mail" class="form-control">
-				<input type="submit" name="Modify" value="modify" class="btn btn-primary col-md-3 col-md-offset-9">
-			</form>
+	<div class="row" >
+	<div class="col-md-10 col-md-offset-1">
+		<section class="row activity-section">
+					
+			<div class="row">
+				<article class="col-xs-10 col-xs-offset-1 activity-exemple-article">
+					<div class="row activity-exemple-block">
+						<div class="col-md-4 activity-exemple-part">
+							<img src="../images/ProfilAT.png" class="img-responsive img-activity-exemple">
+						</div>
+						<div class="col-md-8">
+							<h2 class="col-md-12 description-title">Activity Name</h2>
+							<p class="col-md-12 ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>	
+				</article>
 			</div>
-		</article>
-</section>
-</div>
+		</section>
+	</div>
+	</div>
 <footer class="footer">
 		<div class="container-fluid">
 			<div class="row">
@@ -104,13 +96,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
+<script>
 	$(function(){
 	var taille = $(".body").height() ;
 	var tf = $(".footer").height();
 	var th = $("header").height();
 	var resultat = taille - tf -th;
-        $(".essai").css('min-height', resultat- 16) ;
+         $(".essai").css('min-height', resultat- 16) ;
+      var position_top_raccourci = $(".body").offset().top;
+        var taille = $(".description").height() ;
+        $(".user-name").innerHeight(taille);
      }); 
 	$(window).resize(function () { 
 	   $('body').css('padding-top', parseInt($('header').css("height")));
@@ -120,5 +115,7 @@
 	   $('body').css('padding-top', parseInt($('header').css("height")));         
 	});
 </script>
+
+
 </body>
 </html>

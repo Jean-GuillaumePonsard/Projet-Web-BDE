@@ -126,6 +126,16 @@ img.img-responsive.img-home
 	margin-bottom: 5%;
 }
 
+img.img-responsive.img-activity-exemple
+{
+	width: 100%;
+}
+
+img.img-responsive.img-gallery
+{
+	width: 100%;
+}
+
 /* title */
 
 h1.home-title
@@ -204,6 +214,14 @@ h3.aside-title
 	text-align: center;
 	margin-bottom: 5%;
 	margin-top: 5%;
+}
+
+.gallery-title
+{
+	text-align: center;
+	background: #bb233c;
+	color: white;padding: 2%;
+	border-radius: 5px;
 }
 
 /*section*/
@@ -303,6 +321,14 @@ section.col-md-10.col-md-offset-1
 	font-size: 100%;
 }
 
+article.activity-exemple-article
+{
+	background: white;
+	margin-bottom: 5%;
+	border-radius: 10px;
+	margin-top: 5%;
+}
+
 .registration-article
 {
 	margin-top: 5%;
@@ -379,6 +405,46 @@ div.aside-block
 	background-color: white;
 }
 
+.activity-exemple-block
+{
+	padding: 3%
+}
+
+.activity-exemple-part
+{
+	padding: 0;
+}
+
+.gallery-block
+{
+	margin-bottom: 5%;
+}
+
+.comment-block
+{
+	border-style: solid;
+	padding: 2%;
+	background: white;
+	border-radius: 5px;
+	border-color:#bebebe;
+	border-width: 2px;
+}
+
+.like-part
+{
+	padding-right: 0;
+}
+
+.comment-part
+{
+	padding-left:  0;
+	color: #bebebe;
+}
+.add-img-part
+{
+	margin-top: 2%;
+}
+
 /* form information */
 
 .registration-info
@@ -419,6 +485,14 @@ div.aside-block
 	text-align: center;
 }
 
+.comment-info
+{
+	border:none;
+	border-top-style: solid;
+	border-top-color:#bebebe;
+	border-top-width: 1px;
+}
+
 /* pagination */
 
 .row.col-sm-6.col-md-offset-3.shop-pagination
@@ -444,19 +518,44 @@ ul.pagination li a.page-selector
 	background-color: #bb233c;
 	border-width: 1.5px;
 	border-color: #a01128;
-	line-height: 100%;	
+		
 }
 
 .validate
 {
 	width: 100%;
+	line-height: 100%;
 }
 
 .form-control-file
 {
-	width: 100%;	
+	width: 100%;
+
 }
 
+.like
+{
+	width: 100%;
+	margin-right: 0;
+	border:none;
+	border-top-style: solid;
+	border-color:#bebebe;
+	border-top-width: 1px; 
+	background: none;
+	color: #bebebe; 
+	border-right: dashed;
+	border-right-width: 0.5px;
+}
+
+.submit-comment
+{
+	border:none;
+	border-top-style: solid;
+	border-top-color:#bebebe;
+	border-top-width: 1px;
+	background: none;
+	color:#bebebe;
+}
 
 /* activity info */
 
