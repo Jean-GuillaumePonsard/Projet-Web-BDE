@@ -1,3 +1,31 @@
 bcl_shop_homepage:
-    path:     /
-    defaults: { _controller: BCLShopBundle:Shop:index }
+    path:     /{page}
+    defaults: { _controller: BCLShopBundle:Shop:index, page: 1}
+    requirements:
+        page: \d*
+
+bcl_shop_article:
+    path:     /article/{id}
+    defaults: { _controller: BCLShopBundle:Shop:showArticle }
+    requirements:
+        id: \d*
+
+bcl_shop_add_article_to_cart:
+    path:     /article/addtocart/{id}
+    defaults: { _controller: BCLShopBundle:Shop:addArticleToCart }
+    requirements:
+        id: \d*
+
+bcl_shop_remove_article_off_cart:
+    path:     /article/removeofcart/{id}
+    defaults: { _controller: BCLShopBundle:Shop:removeArticleOfCart }
+    requirements:
+        id: \d*
+
+bcl_shop_add_article:
+    path:     /article/addArticle
+    defaults: { _controller: BCLShopBundle:Shop:addArticle }
+
+bcl_shop_remove_article:
+    path:     /article/removeArticle
+    defaults: { _controller: BCLShopBundle:Shop:removeArticle }

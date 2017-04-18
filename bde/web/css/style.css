@@ -1,0 +1,646 @@
+html
+{
+	position: relative;
+	min-height: 100%;
+	height: 100%;
+}
+
+/* header en général */
+header
+{
+ min-height: 80px;
+}
+
+header div .nav li a
+{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+/* nav bar */
+
+.nav.navbar-brand
+{
+	padding: 0px 15px 0px 5px;
+
+}
+
+.nav.navbar-header
+{
+ min-height: 80px;
+}
+
+.navActivity
+{
+	
+	text-align: center;
+	margin-top: 2%;
+	background:  #c2242a;
+	border-radius: 5px;
+	
+}
+
+.nav.navbar-nav.contenu
+{
+	
+	float: none;
+	display: inline-block;
+	vertical-align: top;
+
+}
+
+.navActivity ul li a{
+	color: white;
+
+}
+
+/* body */
+
+body
+{
+	margin-bottom: 0px;
+	height: 100%;
+}
+
+.body.relative
+{
+	position: relative;
+}
+
+.container-fluid.body
+{
+	background: black;
+	padding: 0;
+	background-image:url(https://images3.alphacoders.com/245/245765.jpg);
+	overflow: hidden;
+	min-height: 100%;
+	border-style: solid;
+}
+
+/* image */
+
+.img-responsive.BDE-image
+{
+	display: inline; 
+	max-height: 80px; 
+	width: auto; 
+	padding-right: 15px;
+}
+
+.img-responsive.proposalform-img
+{
+	width:  100%;
+	height: auto;
+}
+
+.img-responsive.img-product
+{
+	width: 100%;
+}
+
+img.img-responsive.legal-notices
+{
+	display: inline;
+	margin-right: 3%;
+}
+
+img.img-responsive.contact
+{
+	display: inline;
+	margin-right: 3%;
+}
+
+img.img-responsive.logoExia
+{
+	width: 4%;
+}
+
+img.img-responsive.logoEI
+{
+	width: 4%;
+}
+
+img.img-responsive.facebook
+{
+	display: inline;
+}
+
+img.img-responsive.img-bdemembers
+{
+	width: 100%;
+}
+
+img.img-responsive.img-home
+{
+	width: 100%;
+	margin-bottom: 5%;
+}
+
+img.img-responsive.img-activity-exemple
+{
+	width: 100%;
+}
+
+img.img-responsive.img-gallery
+{
+	width: 100%;
+}
+
+/* title */
+
+h1.home-title
+{
+	background: #bb233c;
+	color: white;
+	text-align: center;
+	padding: 2%;
+	border-radius: 10px;
+}
+
+h1.col-md-10.col-md-offset-1.proposalform-title
+{
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+h2.col-xs-12.legal-notices-title
+{
+	color: #bb233c;
+}
+
+.col-md-10.col-md-offset-2.contact-title
+{
+	text-align: center;
+}
+
+
+h3.list-group-item.list-group-title
+{
+	background-color: #bebebe;
+}
+
+.col-md-12.board-title
+{
+	text-align: center;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+
+.media-heading
+{
+	color: #bb233c;
+}
+
+h3.aside-title
+{
+	text-align: center;
+	color: #bb233c;
+}
+
+.description-title
+{
+	color: #bb233c;
+}
+
+.profil-title
+{
+	text-align: center;
+}
+
+.registration-title
+{
+	text-align: center;
+}
+
+.connection-title
+{
+	text-align: center;
+	margin-top: 5%
+}
+
+.cart-title
+{
+	text-align: center;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+
+.gallery-title
+{
+	text-align: center;
+	background: #bb233c;
+	color: white;padding: 2%;
+	border-radius: 5px;
+}
+
+/*section*/
+
+.cart-section
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+}
+
+.jumbotron.col-md-7.col-md-offset-1
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+}
+
+section.col-md-10.col-md-offset-1
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+}
+
+.col-md-8.col-md-offset-2
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+}
+
+.activity-section
+{
+	background-color: rgba(190, 190, 190, 0.8);
+}
+
+.bdemembers-section
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+}
+
+.row.shop-section
+{
+	margin-bottom: 5%;
+}
+
+.col-md-6.col-md-offset-3.registration-section
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+}
+
+.profil-section
+{
+	background-color: rgba(190, 190, 190, 0.8);
+	margin-bottom: 0;
+}
+
+.connection-section
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+}
+
+.col-xs-9.essai
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+}
+
+/* article */
+
+.col-xs-10.col-xs-offset-1.legal-notices-article
+{
+	background: white;
+	margin-bottom: 5%;
+	border-radius: 10px;	
+}
+
+
+.row.contact-article
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.activity-article
+{
+	background: white;
+	margin-bottom: 5%;
+	border-radius: 10px;
+	height: 10%;
+	font-size: 100%;
+}
+
+article.activity-exemple-article
+{
+	background: white;
+	margin-bottom: 5%;
+	border-radius: 10px;
+	margin-top: 5%;
+}
+
+.registration-article
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.profil-article
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+/*aside*/
+
+aside.jumbotron.col-md-2.col-md-offset-1
+{
+	margin-bottom: 0;
+	background-color: rgba(190, 190, 190, 0.8);
+	min-height: 100%;
+	padding: 3%;
+}
+
+div.aside-block
+{
+	background: white;
+	margin-bottom: 10%;
+	border-radius: 10px;
+	padding: 3%;
+}
+
+.sidebar.col-xs-2
+{
+	margin-top: 10%;
+}
+
+.list-group-product
+{
+	color: #c2242a;
+}
+
+/* div part*/
+
+
+.row.proposalform-part
+{
+	margin-bottom: 5%;
+}
+
+.row.col-md-6.col-md-offset-1.proposalform-part2
+{
+	margin-top: 2%;
+}
+
+.row.legal-notices-block
+{
+	padding: 3%;
+}
+
+.row.col-md-12.col-md-offset-1.contact-part
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+	color: #bb233c;
+}
+
+.bdemembers-part
+{
+	margin-bottom: 5%;
+}
+
+.profil-part
+{
+	border-radius: 10px;
+	background-color: white;
+}
+
+.activity-exemple-block
+{
+	padding: 3%
+}
+
+.activity-exemple-part
+{
+	padding: 0;
+}
+
+.gallery-block
+{
+	margin-bottom: 5%;
+}
+
+.comment-block
+{
+	border-style: solid;
+	padding: 2%;
+	background: white;
+	border-radius: 5px;
+	border-color:#bebebe;
+	border-width: 2px;
+}
+
+.like-part
+{
+	padding-right: 0;
+}
+
+.comment-part
+{
+	padding-left:  0;
+	color: #bebebe;
+}
+.add-img-part
+{
+	margin-top: 2%;
+}
+
+.row.date-proposal-block
+{
+	padding: 3%;
+}
+
+.date-proposal-part
+{
+	background: darkgray;
+	 border-radius: 10px;
+}
+
+.back-button-block
+{
+	margin-top: 1%;
+}
+
+.back-button-block2
+{
+	margin-bottom: 1%;
+}
+
+
+
+/* form information */
+
+.registration-info
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+	color: #bb233c;
+}
+
+.profil-info1
+{
+	margin-top: 5%;
+	color: #bb233c;
+}
+
+.profil-info
+{
+	color: #bb233c;
+}
+
+.connection-info1
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+	color: #bb233c;
+}
+
+.connection-info
+{
+	color: #bb233c;
+}
+
+.cart-info
+{
+
+	color: #bb233c;
+	background-color: #bebebe;
+	text-align: center;
+}
+
+.comment-info
+{
+	border:none;
+	border-top-style: solid;
+	border-top-color:#bebebe;
+	border-top-width: 1px;
+}
+
+.activity-info1
+{
+	margin-bottom: 2%;
+}
+
+.activity-date-info
+{
+	margin-bottom: 5%;
+}
+
+/* pagination */
+
+.row.col-sm-6.col-md-offset-3.shop-pagination
+{
+	text-align: center;
+}
+
+ul.pagination li a.page-selector
+{
+	color: #c2242a;
+}
+
+/* button */
+
+.custom-file-input
+{
+	width: 100%;
+}
+
+.btn.btn-primary
+{
+	
+	background-color: #bb233c;
+	border-width: 1.5px;
+	border-color: #a01128;
+		
+}
+
+.validate
+{
+	width: 100%;
+	line-height: 100%;
+}
+
+.form-control-file
+{
+	width: 100%;
+
+}
+
+.like
+{
+	width: 100%;
+	margin-right: 0;
+	border:none;
+	border-top-style: solid;
+	border-color:#bebebe;
+	border-top-width: 1px; 
+	background: none;
+	color: #bebebe; 
+	border-right: dashed;
+	border-right-width: 0.5px;
+}
+
+.submit-comment
+{
+	border:none;
+	border-top-style: solid;
+	border-top-color:#bebebe;
+	border-top-width: 1px;
+	background: none;
+	color:#bebebe;
+}
+
+/* activity info */
+
+.user-name
+{
+	background: #bb233c;
+	text-align: center;
+	color: white;
+	border-radius: 30px;
+	padding: 10%;
+}
+.date
+{
+	background: #bb233c;
+	text-align: center;
+	color: white;
+	border-radius: 30px;
+	padding: 10%;
+}
+
+/* footer */
+
+.footer 
+{
+	background-color: #192121;
+	width: 100%;
+	padding-top: 15px;
+}
+
+.footer div div p a 
+{
+	text-align: center;
+	color: #595959;
+}
+
+.footer div div p 
+{
+	text-align: center;
+	color: #c2242a;
+}
+
+p.col-sm-2 a.footer-color
+{
+	color: #c2242a;
+}

@@ -1,3 +1,37 @@
 bcl_activity_homepage:
     path:     /
     defaults: { _controller: BCLActivityBundle:Activity:index }
+
+bcl_activity_futuractivities:
+    path:     /futureActivities/{page}
+    defaults: { _controller: BCLActivityBundle:Activity:showAllFutureActivities, page: 1 }
+    requirements:
+        page: \d*
+
+bcl_activity_futuractivity:
+    path:     /futureActivities/{id}
+    defaults: { _controller: BCLActivityBundle:Activity:showFutureActivity }
+    requirements:
+        id: \d*
+
+bcl_activity_pastActivities:
+    path:     /pastActivities
+    defaults: { _controller: BCLActivityBundle:Activity:showAllPastActivities }
+
+bcl_activity_pastActivity:
+    path:     /pastActivities/{id}
+    defaults: { _controller: BCLActivityBundle:Activity:showFutureActivity }
+    requirements:
+        id: \d*
+
+bcl_activity_proposals:
+    path:     /proposal/{page}
+    defaults: { _controller: BCLActivityBundle:Activity:showAllProposals, page: 1 }
+    requirements:
+        page: \d*
+
+bcl_activity_proposal:
+    path:     /proposal/{id}
+    defaults: { _controller: BCLActivityBundle:Activity:showProposal }
+    requirements:
+        id: \d*
