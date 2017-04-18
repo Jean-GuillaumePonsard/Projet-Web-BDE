@@ -1,0 +1,42 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+ 	Cart
+{% endblock %}
+
+{% block body %}
+	<div class="row" >
+		<section class="col-md-10 col-md-offset-1 cart-section essai">
+			<article class="col-md-10 col-md-offset-1">
+				<h1 class="col-md-12 cart-title">Cart</h1>
+				<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th class="cart-info">Product</th>
+						<th class="cart-info">Description</th>
+						<th class="cart-info">Quantity</th>
+						<th class="cart-info">Price €</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for article in panier %}
+					<tr>
+						<td>{{ article.name }}</td>
+						<td>{{ article.description }}</td>
+						<td>{{ article.quantity }}</td>
+						<td>{{ article.price }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+				</table>
+				<div class="col-md-2 col-md-offset-10">
+				Total: 150 000 €
+				<form>
+					<input type="submit" name="Pay" value="pay" class="btn btn-primary validate">
+				</form>
+				</div>
+
+			</article>
+		</section>
+	</div>
+{% endblock %}

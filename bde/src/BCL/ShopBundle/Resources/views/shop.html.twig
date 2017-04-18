@@ -1,0 +1,32 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+ 	Shop
+{% endblock %}
+
+{% block body %}
+
+<div class="row">
+	
+		<aside class="sidebar col-xs-2">
+			<nav>
+				<ul class="list-group">
+					<h3 class="list-group-item list-group-title">Products</h3>
+					<li class="list-group-item"><a href="{{ path() }}" class="list-group-product">all</a></li>
+					<li class="list-group-item"><a href="{{ path() }}" class="list-group-product">pull-over</a></li>
+					<li class="list-group-item"><a href="{{ path() }}" class="list-group-product">goodie</a></li>
+				</ul>
+			</nav>
+		</aside>
+		<section class="col-xs-9 essai">
+			<div class="row">
+				<h1 class="col-md-12 board-title">Shop</h1>
+			</div>
+			{% block article %}
+			{% endblock %}
+
+			
+		</section>
+	</div>
+
+	{% endblock %}

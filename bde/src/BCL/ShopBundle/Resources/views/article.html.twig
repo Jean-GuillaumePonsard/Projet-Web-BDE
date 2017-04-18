@@ -1,0 +1,37 @@
+{% extends "BCLShopBundle::shop.html.twig" %}
+{% block article %}
+	{% set nbArticle = 2 %}
+	{% for article in articles %}
+		{% if loop.index0 % nbArticle == 0 %}
+			<div class="row shop-section">
+		{% endif %}
+		<article>
+			<div class="media col-xs-6">
+				<div class="media-left col-xs-4">
+					<img src="{{ article.url }}" class="img-responsive img-product"/>
+				</div>	
+				<div class="media-body">
+					<h3 class="media-heading">{{ article.name }}</h3>
+					<p>{{ article.description }}</p>
+					<form>
+						<input type="number" name="quantity" value="1" >
+						<input type="submit" name="" value="cart" class="btn btn-primary">
+					</form>
+				</div>
+			</div>
+		</article>
+		{% if (loop.index0 % nbArticle == nbArticle - 1 or loop.last) %}
+    		</div>
+  		{% endif %}
+	{% endfor %}
+			
+	<div class="row col-sm-6 col-md-offset-3 shop-pagination">
+		<ul class="pagination">
+		   	<li><a href="#" class="page-selector">&laquo;</a></li>
+		    <li><a href="#" class="page-selector">1</a></li>
+		    <li><a href="#" class="page-selector">2</a></li>
+		    <li><a href="#" class="page-selector">3</a></li>
+		    <li><a href="#" class="page-selector">&raquo;</a></li>
+		</ul>
+	</div>
+{% endblock %}
