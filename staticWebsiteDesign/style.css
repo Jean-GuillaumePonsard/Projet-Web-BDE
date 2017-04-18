@@ -445,6 +445,29 @@ div.aside-block
 	margin-top: 2%;
 }
 
+.row.date-proposal-block
+{
+	padding: 3%;
+}
+
+.date-proposal-part
+{
+	background: darkgray;
+	 border-radius: 10px;
+}
+
+.back-button-block
+{
+	margin-top: 1%;
+}
+
+.back-button-block2
+{
+	margin-bottom: 1%;
+}
+
+
+
 /* form information */
 
 .registration-info
