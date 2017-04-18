@@ -38,7 +38,7 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="Url_Picture", type="string", length=255)
+     * @ORM\Column(name="Url_Picture", type="string", length=255, nullable=true)
      */
     private $urlPicture;
 
@@ -47,6 +47,11 @@ class Activity
      * @ORM\JoinColumn(nullable=false)
      */
     private $activityStatus;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="BCL\UserBundle\Entity\Users", cascade={"persist"})
+     */
+    private $usersSubscribed;
 
     /**
      * Get id
@@ -129,5 +134,28 @@ class Activity
     {
         return $this->urlPicture;
     }
-}
 
+    /**
+     * Set activityStatus
+     *
+     * @param \BCL\ActivityBundle\Entity\Activity $activityStatus
+     *
+     * @return Activity
+     */
+    public function setActivityStatus(\BCL\ActivityBundle\Entity\Activity $activityStatus)
+    {
+        $this->activityStatus = $activityStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get activityStatus
+     *
+     * @return \BCL\ActivityBundle\Entity\Activity
+     */
+    public function getActivityStatus()
+    {
+        return $this->activityStatus;
+    }
+}

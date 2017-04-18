@@ -49,6 +49,11 @@ class Activity
     private $activityStatus;
 
     /**
+     * @ORM\ManyToMany(targetEntity="BCL\UserBundle\Entity\Users", cascade={"persist"})
+     */
+    private $usersSubscribed;
+
+    /**
      * Get id
      *
      * @return int
@@ -152,5 +157,46 @@ class Activity
     public function getActivityStatus()
     {
         return $this->activityStatus;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->usersSubscribed = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add usersSubscribed
+     *
+     * @param \BCL\UserBundle\Entity\Users $usersSubscribed
+     *
+     * @return Activity
+     */
+    public function addUsersSubscribed(\BCL\UserBundle\Entity\Users $usersSubscribed)
+    {
+        $this->usersSubscribed[] = $usersSubscribed;
+
+        return $this;
+    }
+
+    /**
+     * Remove usersSubscribed
+     *
+     * @param \BCL\UserBundle\Entity\Users $usersSubscribed
+     */
+    public function removeUsersSubscribed(\BCL\UserBundle\Entity\Users $usersSubscribed)
+    {
+        $this->usersSubscribed->removeElement($usersSubscribed);
+    }
+
+    /**
+     * Get usersSubscribed
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsersSubscribed()
+    {
+        return $this->usersSubscribed;
     }
 }
