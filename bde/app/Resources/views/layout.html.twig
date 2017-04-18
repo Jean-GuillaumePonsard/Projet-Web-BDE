@@ -36,12 +36,12 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						{% if user %}
-							<li><a href="{{ path() }}"><span class="glyphicon glyphicon-shopping-cart"></a></li>
-							<li><a href="{{ path() }}">Log out</a></li>
-							<li><a href="{{ path() }}">Profil</a></li>
+							<li><a href="{# {{ path() }} #}"><span class="glyphicon glyphicon-shopping-cart"></a></li>
+							<li><a href="{# {{ path() }} #}">Log out</a></li>
+							<li><a href="{# {{ path() }} #}">Profil</a></li>
 						{% else %}
-							<li><a href="{{ path() }}">Log in</a></li>
-							<li><a href="{{ path() }}">Sign up</a></li>
+							<li><a href="{# {{ path() }} #}">Log in</a></li>
+							<li><a href="{# {{ path() }} #}">Sign up</a></li>
 						{% endif %}
 						<li><a href="">FR</a></li>
 						<li><a href="">EN</a></li>
@@ -59,9 +59,9 @@
 					<p class="col-sm-3">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 					</p>
-					<p class="col-sm-3"><a href="{{ path() }}"><img src="../images/justice-logo.png " alt="legal notices" class="img-responsive"/>Legal Notices</a></p>
-					<p class="col-sm-3"><a href="{{ path() }}" ><img src="../images/logo-email.png " alt="contact" class="img-responsive" /> Contact</a></p>
-					<p class="col-sm-3"><a href="{{ path() }}" ><img src="../images/facebook.png" alt="facebook" class="img-responsive" /></a></p>
+					<p class="col-sm-3"><a href="{# {{ path() }} #}"><img src="../images/justice-logo.png " alt="legal notices" class="img-responsive"/>Legal Notices</a></p>
+					<p class="col-sm-3"><a href="{# {{ path() }} #}" ><img src="../images/logo-email.png " alt="contact" class="img-responsive" /> Contact</a></p>
+					<p class="col-sm-3"><a href="{# {{ path() }} #}" ><img src="../images/facebook.png" alt="facebook" class="img-responsive" /></a></p>
 				</div>
 			</div>
 		</footer>

@@ -11,6 +11,6 @@ class CoreController extends Controller
 {
     public function indexAction()
     {
-        return new Response("Bonjour, ceci est la page qui contiendra le core, donc le home, shop et user");
+        return $this->render('::layout.html.twig', array('user' => ""));
     }
 }
