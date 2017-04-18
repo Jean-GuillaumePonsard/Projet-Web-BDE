@@ -640,8 +640,7 @@ ul.pagination li a.page-selector
 	color: #c2242a;
 }
 
-.footer-adress
+p.col-sm-2 a.footer-color
 {
-	margin-right: 5%;
 	color: #c2242a;
 }
