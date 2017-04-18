@@ -493,6 +493,16 @@ div.aside-block
 	border-top-width: 1px;
 }
 
+.activity-info1
+{
+	margin-bottom: 2%;
+}
+
+.activity-date-info
+{
+	margin-bottom: 5%;
+}
+
 /* pagination */
 
 .row.col-sm-6.col-md-offset-3.shop-pagination

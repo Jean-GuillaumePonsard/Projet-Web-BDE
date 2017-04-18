@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Future Activities form</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="height=device-height, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+<body>
+
+<header class="navbar navbar-default navbar-fixed-top">
+
+	<nav class="container">
+	
+		<div class="nav navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+			<div class="nav navbar-brand">
+				<img src="../images/LogoBDE.png" alt="BDE Logo" class="img-responsive BDE-image"/>BDE Website
+			</div>
+		</div>
+		<div id="mainMenu" class="navbar-collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="active"><a href="home.html">Home</a></li>
+				<li><a href="futurActivities.html">Activities</a></li>
+				<li><a href="shop.html">Shop</a></li>
+				<li><a href="BDEmembers.html">BDE Members</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="">Log out</a></li>
+				<li><a href="profil.html">Profil</a></li>
+				<li><a href="">FR</a></li>
+				<li><a href="">EN</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<div class="container-fluid body">
+<div class="row essai" >
+<section class="col-md-10 col-md-offset-1">
+	<article>
+		<div  class="col-md-12">
+			<form class="form-group ">
+			<h1 class="col-md-10 col-md-offset-1 proposalform-title">Future Activity Form</h1>
+			<div class="row proposalform-part1">
+				<div class=" row col-md-3 col-md-offset-1">
+					<img class="img-thumbnail" src="../images/ProfilAB.png" alt="activityPicture" class="img-responsive proposalform-img">
+					<label class="custom-file" >
+					  <input type="file" id="file" class="custom-file-input"/>
+					<span class="custom-file-control"></span>
+					</label>
+				</div>
+				<div class=" row col-md-6 col-md-offset-1">
+					<div>
+					Activity name:
+					<input type="text" name="activityname" class="form-control activity-info1">
+					</div>
+					<div>
+					Description:
+					<textarea class="form-control activity-info1" rows="6"></textarea>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+						vote deadline :
+						<input type="date" name="votedeadline" class="form-control activity-date-info" >
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+						subscribe deadline
+						<input type="date" name="subscribedeadline" class="form-control activity-date-info" >
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3">
+						date option 1:
+						<input type="date" name="dateoption1" class="form-control activity-date-info" >
+						</div>
+						<div class="col-sm-3">
+						date option 2:
+						<input type="date" name="dateoption2" class="form-control activity-date-info" >
+						</div>
+						<div class="col-sm-3">
+						date option 3:
+						<input type="date" name="dateoption3" class="form-control activity-date-info" >
+						</div>
+						<div class="col-sm-3">
+						date option 4:
+						<input type="date" name="dateoption4" class="form-control activity-date-info" >
+						</div>
+					</div>
+					<div>
+					<input type="submit" name="subscribeForm" value="Validate" class="btn btn-primary">
+					</div>
+				</div>
+			</div>
+			</form>
+		</div>
+	</article>
+</section>
+</div>
+<footer class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<p class="col-sm-3">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				</p>
+				<p class="col-sm-3"><a href="MentionLegal.html"><img src="../images/justice-logo.png " alt="legal notices" class="img-responsive legal-notices">Legal Notices</a></p>
+				<p class="col-sm-3"><a href="contact.html" ><img src="../images/logo-email.png " alt="contact" class="img-responsive contact"> Contact</a></p>
+				<p class="col-sm-3"><a href="https://www.facebook.com/BDECesiLyon/"><img src="../images/facebook.png" alt="facebook" class="img-responsive facebook" /></a></p>
+			</div>
+		</div>
+	</footer>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+	var taille = $(".body").height() ;
+	var tf = $(".footer").height();
+	var th = $("header").height();
+	var resultat = taille - tf -th;
+        $(".essai").css('min-height', resultat- 16) ;
+     }); 
+	$(window).resize(function () { 
+	   $('body').css('padding-top', parseInt($('header').css("height")));
+	});
+
+	$(window).ready(function () { 
+	   $('body').css('padding-top', parseInt($('header').css("height")));         
+	});
+</script>
+</body>
+</html>
