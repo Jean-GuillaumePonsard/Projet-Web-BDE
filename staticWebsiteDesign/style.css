@@ -101,13 +101,23 @@ body
 img.img-responsive.legal-notices
 {
 	display: inline;
-	margin-right: 2%;
+	margin-right: 3%;
 }
 
 img.img-responsive.contact
 {
 	display: inline;
-	margin-right: 2%;
+	margin-right: 3%;
+}
+
+img.img-responsive.logoExia
+{
+	width: 4%;
+}
+
+img.img-responsive.logoEI
+{
+	width: 4%;
 }
 
 img.img-responsive.facebook
@@ -630,3 +640,8 @@ ul.pagination li a.page-selector
 	color: #c2242a;
 }
 
+.footer-adress
+{
+	margin-right: 5%;
+	color: #c2242a;
+}
