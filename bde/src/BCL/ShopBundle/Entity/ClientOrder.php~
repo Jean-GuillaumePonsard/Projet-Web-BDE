@@ -99,28 +99,5 @@ class ClientOrder
     {
         return $this->paid;
     }
-
-    /**
-     * Set client
-     *
-     * @param \BCL\UserBundle\Entity\Users $client
-     *
-     * @return ClientOrder
-     */
-    public function setClient(\BCL\UserBundle\Entity\Users $client)
-    {
-        $this->client = $client;
-
-        return $this;
-    }
-
-    /**
-     * Get client
-     *
-     * @return \BCL\UserBundle\Entity\Users
-     */
-    public function getClient()
-    {
-        return $this->client;
-    }
 }
+

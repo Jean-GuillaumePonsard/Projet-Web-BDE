@@ -5,12 +5,12 @@ namespace BCL\ActivityBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Activity
+ * ActivityIdea
  *
- * @ORM\Table(name="activity")
- * @ORM\Entity(repositoryClass="BCL\ActivityBundle\Repository\ActivityRepository")
+ * @ORM\Table(name="activity_idea")
+ * @ORM\Entity(repositoryClass="BCL\ActivityBundle\Repository\ActivityIdeaRepository")
  */
-class Activity
+class ActivityIdea
 {
     /**
      * @var int
@@ -38,26 +38,21 @@ class Activity
     /**
      * @var string
      *
-     * @ORM\Column(name="Url_Picture", type="string", length=255, nullable=true)
+     * @ORM\Column(name="Url_Picture", type="string", length=255)
      */
     private $urlPicture;
 
     /**
-     * @ORM\ManyToOne(targetEntity="BCL\ActivityBundle\Entity\ActivityStatus")
+     * @ORM\ManyToOne(targetEntity="BCL\UserBundle\Entity\Users")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $activityStatus;
+    private $userCreator;
 
     /**
      * @ORM\ManyToMany(targetEntity="BCL\UserBundle\Entity\Users", cascade={"persist"})
      */
-    private $usersSubscribed;
+    private $userWhoLiked;
 
-    /**
-     * @ORM\OneToOne(targetEntity="BCL\ActivityBundle\Entity\Gallery", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $gallery;
 
     /**
      * Get id
@@ -74,7 +69,7 @@ class Activity
      *
      * @param string $name
      *
-     * @return Activity
+     * @return ActivityIdea
      */
     public function setName($name)
     {
@@ -98,7 +93,7 @@ class Activity
      *
      * @param string $description
      *
-     * @return Activity
+     * @return ActivityIdea
      */
     public function setDescription($description)
     {
@@ -122,7 +117,7 @@ class Activity
      *
      * @param string $urlPicture
      *
-     * @return Activity
+     * @return ActivityIdea
      */
     public function setUrlPicture($urlPicture)
     {
@@ -140,69 +135,69 @@ class Activity
     {
         return $this->urlPicture;
     }
-
-    /**
-     * Set activityStatus
-     *
-     * @param \BCL\ActivityBundle\Entity\Activity $activityStatus
-     *
-     * @return Activity
-     */
-    public function setActivityStatus(\BCL\ActivityBundle\Entity\Activity $activityStatus)
-    {
-        $this->activityStatus = $activityStatus;
-
-        return $this;
-    }
-
-    /**
-     * Get activityStatus
-     *
-     * @return \BCL\ActivityBundle\Entity\Activity
-     */
-    public function getActivityStatus()
-    {
-        return $this->activityStatus;
-    }
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->usersSubscribed = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->userWhoLiked = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add usersSubscribed
+     * Set userCreator
      *
-     * @param \BCL\UserBundle\Entity\Users $usersSubscribed
+     * @param \BCL\UserBundle\Entity\Users $userCreator
      *
-     * @return Activity
+     * @return ActivityIdea
      */
-    public function addUsersSubscribed(\BCL\UserBundle\Entity\Users $usersSubscribed)
+    public function setUserCreator(\BCL\UserBundle\Entity\Users $userCreator)
     {
-        $this->usersSubscribed[] = $usersSubscribed;
+        $this->userCreator = $userCreator;
 
         return $this;
     }
 
     /**
-     * Remove usersSubscribed
+     * Get userCreator
      *
-     * @param \BCL\UserBundle\Entity\Users $usersSubscribed
+     * @return \BCL\UserBundle\Entity\Users
      */
-    public function removeUsersSubscribed(\BCL\UserBundle\Entity\Users $usersSubscribed)
+    public function getUserCreator()
     {
-        $this->usersSubscribed->removeElement($usersSubscribed);
+        return $this->userCreator;
     }
 
     /**
-     * Get usersSubscribed
+     * Add userWhoLiked
+     *
+     * @param \BCL\UserBundle\Entity\Users $userWhoLiked
+     *
+     * @return ActivityIdea
+     */
+    public function addUserWhoLiked(\BCL\UserBundle\Entity\Users $userWhoLiked)
+    {
+        $this->userWhoLiked[] = $userWhoLiked;
+
+        return $this;
+    }
+
+    /**
+     * Remove userWhoLiked
+     *
+     * @param \BCL\UserBundle\Entity\Users $userWhoLiked
+     */
+    public function removeUserWhoLiked(\BCL\UserBundle\Entity\Users $userWhoLiked)
+    {
+        $this->userWhoLiked->removeElement($userWhoLiked);
+    }
+
+    /**
+     * Get userWhoLiked
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getUsersSubscribed()
+    public function getUserWhoLiked()
     {
-        return $this->usersSubscribed;
+        return $this->userWhoLiked;
     }
 }

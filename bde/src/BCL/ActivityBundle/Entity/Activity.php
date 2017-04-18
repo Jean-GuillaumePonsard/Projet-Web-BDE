@@ -43,7 +43,7 @@ class Activity
     private $urlPicture;
 
     /**
-     * @ORM\ManyToOne(targetEntity="BCL\ActivityBundle\Entity\Activity")
+     * @ORM\ManyToOne(targetEntity="BCL\ActivityBundle\Entity\ActivityStatus")
      * @ORM\JoinColumn(nullable=false)
      */
     private $activityStatus;
@@ -52,6 +52,12 @@ class Activity
      * @ORM\ManyToMany(targetEntity="BCL\UserBundle\Entity\Users", cascade={"persist"})
      */
     private $usersSubscribed;
+
+    /**
+     * @ORM\OneToOne(targetEntity="BCL\ActivityBundle\Entity\Gallery", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $gallery;
 
     /**
      * Get id
@@ -198,5 +204,29 @@ class Activity
     public function getUsersSubscribed()
     {
         return $this->usersSubscribed;
+    }
+
+    /**
+     * Set gallery
+     *
+     * @param \BCL\ActivityBundle\Entity\Gallery $gallery
+     *
+     * @return Activity
+     */
+    public function setGallery(\BCL\ActivityBundle\Entity\Gallery $gallery = null)
+    {
+        $this->gallery = $gallery;
+
+        return $this;
+    }
+
+    /**
+     * Get gallery
+     *
+     * @return \BCL\ActivityBundle\Entity\Gallery
+     */
+    public function getGallery()
+    {
+        return $this->gallery;
     }
 }
