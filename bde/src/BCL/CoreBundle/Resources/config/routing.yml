@@ -9,3 +9,9 @@ bcl_core_homepage2:
 bcl_core_legalNotices:
     path:     /legalNotices
     defaults: {_controller: BCLCoreBundle:Core:legalNotices}
+
+bcl_core_contact:
+    path:     /contact
+    defaults:  { _controller: BCLCoreBundle:Core:contact}
+    requirements:
+        _method: POST

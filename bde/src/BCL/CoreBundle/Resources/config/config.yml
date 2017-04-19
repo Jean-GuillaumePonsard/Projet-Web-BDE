@@ -1,0 +1,3 @@
+parameters:
+    # BCL contact email address
+    bcl_core.emails.contact_email: adthevenet@hotmail.fr

@@ -1,0 +1,38 @@
+{% extends "::layout.html.twig" %}
+{% block title %}
+    Contact
+{% endblock %}
+{% block body %}
+    <div class="row " >
+        <section class="col-md-8 col-md-offset-2 essai">
+            <article class="row contact-article">
+                <div  class="col-md-10">
+                    <h1 class="col-md-10 col-md-offset-2 contact-title">Contact</h1>
+                    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+                    {# Les erreurs générales du formulaire. #}
+                    {{ form_errors(form) }}
+
+                    <form class="form-group ">
+                        <div class="row col-md-12 col-md-offset-1 contact-part">
+                            {{ form_label(form.name, "Your name :") }}
+                            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+
+                            {{ form_label(form.email, "Your mail address :") }}
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="row col-md-12 col-md-offset-1 contact-part">
+                            {{ form_label(form.subject, "subject") }}
+                            {{ form_widget(form.subject, {'attr': {'class': 'form-control'}}) }}
+
+                            {{ form_label(form.body, "Your message") }}
+                            {{ form_widget(form.body, {'attr': {'class': 'form-control', 'rows': '12'}}) }}
+                            {{ form_widget(form.send, {'attr': {'class': 'btn btn-primary' }}) }}
+                        </div>
+                    </form>
+                    {{ form_end(form) }}
+                </div>
+            </article>
+        </section>
+    </div>
+{% endblock %}
