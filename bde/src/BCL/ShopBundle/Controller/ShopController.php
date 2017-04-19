@@ -19,7 +19,8 @@ class ShopController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('BCLShopBundle:Shop:article.html.twig') ;
+        $articles = $this->getDoctrine()->getManager()->getRepository('BCLShopBundle:Article')->findAll();
+        return $this->render('BCLShopBundle:Shop:article.html.twig', array('articles' => $articles));
     }
 
     public function cartAction()

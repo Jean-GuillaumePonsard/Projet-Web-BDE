@@ -1,4 +1,4 @@
-{% extends "BCLShopBundle::shop.html.twig" %}
+{% extends "BCLShopBundle:Shop:shop.html.twig" %}
 
 {% block article %}
 	{% set nbArticle = 2 %}
@@ -9,7 +9,7 @@
 		<article>
 			<div class="media col-xs-6">
 				<div class="media-left col-xs-4">
-					<img src="{{ article.url }}" class="img-responsive img-product"/>
+					<img src="{{ article.urlPicture }}" class="img-responsive img-product"/>
 				</div>	
 				<div class="media-body">
 					<h3 class="media-heading">{{ article.name }}</h3>

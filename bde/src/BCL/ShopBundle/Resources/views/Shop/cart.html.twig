@@ -19,19 +19,19 @@
 					</tr>
 				</thead>
 				<tbody>
-				{#{% for article in cart %}#}
+				{#{% for article in panier %}#}
 					<tr>
-						<td>{# {{ article.name }} #} article name</td>
-						<td>{# {{ article.description }} #}article description</td>
-						<td>{# {{ article.quantity }} #} article quantity</td>
-						<td>{# {{ article.price }} #} article price</td>
+						<td>{#{{ article.name }}#}</td>
+						<td>{#{{ article.description }}#}</td>
+						<td>{#{{ article.quantity }}#}</td>
+						<td>{#{{ article.price }}#}</td>
 					</tr>
-				{#{% endfor %}#}
-				</tbody>
-				</table>
-				<div class="col-md-2 col-md-offset-10">
-				Total: 150 000 €
-				{# form #}
+                {#{% endfor %}#}
+            </tbody>
+            </table>
+            <div class="col-md-2 col-md-offset-10">
+            Total: 150 000 €
+            {# form #}
 				</div>
 
 			</article>
