@@ -1,0 +1,1 @@
+INSERT INTO status (Name) VALUES ('Admin'),('Student'), ('Teacher'), ('BDEMember')

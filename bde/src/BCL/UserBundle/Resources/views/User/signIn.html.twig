@@ -1,0 +1,57 @@
+{# src/BCL/UserBundle/Ressources/views/User/signIn.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+
+    <div class="container-fluid body">
+        <div class="row " >
+            <section class="col-md-6 col-md-offset-3 registration-section essai">
+                <article class="row registration-article">
+                    <div  class="col-md-10 col-md-offset-1">
+                        {{ form_start(form, {'attr': {'class': 'form-group'}}) }}
+
+                        {{ form_errors(form) }}
+
+                        <h1 class="col-md-10 col-md-offset-1 registration-title">Registration Form</h1>
+
+                            <div class="row col-md-10 col-md-offset-1 registration-info">
+                                {{ form_label(form.firstName, "First Name") }}
+                                {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+
+                            </div>
+                            <div class="row col-md-10 col-md-offset-1 registration-info">
+                                {{ form_label(form.lastName, "Last Name") }}
+                                {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="row col-md-10 col-md-offset-1 registration-info">
+                                {{ form_label(form.email, "Mail Address") }}
+                                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="row col-md-10 col-md-offset-1 registration-info">
+                                {{ form_label(form.password, "Password") }}
+                                {{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="row col-md-10 col-md-offset-1 registration-info">
+                                {{ form_label(form.confirmPassword, "Confirm Password") }}
+                                {{ form_widget(form.confirmPassword, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            {#<div class="row col-md-10 col-md-offset-1 registration-info">
+                                {{ form_label(form.status, "Status") }}
+                                {{ form_widget(form.status, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="row col-md-10 col-md-offset-1 registration-info">
+                                {{ form_label(form.schoolyear, "School Year") }}
+                                {{ form_widget(form.schoolyear, {'attr': {'class': 'form-control'}}) }}
+                            </div>#}
+                            <div class="row col-md-4 col-md-offset-7">
+                                {{ form_widget(form.validate, {'attr': {'class': 'btn btn-primary validate'}}) }}
+                            </div>
+                        {{ form_rest(form) }}
+                        {{ form_end(form) }}
+                    </div>
+                </article>
+            </section>
+        </div>
+
+{% endblock %}

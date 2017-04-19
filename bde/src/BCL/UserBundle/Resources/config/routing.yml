@@ -5,6 +5,8 @@ bcl_user_homepage:
 bcl_user_remove:
     path:     /remove/{id}
     defaults: { _controller: BCLUserBundle:User:removeUser }
+    requirements:
+        id: \d+
 
 bcl_user_signIn:
     path:     /signIn
@@ -17,3 +19,9 @@ bcl_user_logIn:
 bcl_user_logOut:
     path:     /logOut
     defaults: { _controller: BCLUserBundle:User:logOut }
+
+bcl_user_profil:
+    path:     /profil/{id}
+    defaults: { _controller: BCLUserBundle:User:viewProfil }
+    requirements:
+            id: \d+

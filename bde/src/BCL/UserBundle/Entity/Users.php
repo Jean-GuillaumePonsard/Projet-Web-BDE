@@ -49,6 +49,10 @@ class Users
      */
     private $password;
 
+    private $confirmPassword;
+
+
+
     /**
      * @var string
      *
@@ -64,7 +68,7 @@ class Users
 
     /**
      * @ORM\ManyToOne(targetEntity="BCL\UserBundle\Entity\Schoolyear")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $schoolyear;
 
@@ -212,6 +216,7 @@ class Users
         return $this;
     }
 
+
     /**
      * Get status
      *
@@ -244,5 +249,21 @@ class Users
     public function getSchoolyear()
     {
         return $this->schoolyear;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getConfirmPassword()
+    {
+        return $this->confirmPassword;
+    }
+
+    /**
+     * @param mixed $confirmPassword
+     */
+    public function setConfirmPassword($confirmPassword)
+    {
+        $this->confirmPassword = $confirmPassword;
     }
 }
