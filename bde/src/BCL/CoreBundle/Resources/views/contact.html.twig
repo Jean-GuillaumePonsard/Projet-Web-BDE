@@ -8,12 +8,11 @@
             <article class="row contact-article">
                 <div  class="col-md-10">
                     <h1 class="col-md-10 col-md-offset-2 contact-title">Contact</h1>
-                    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                    {{ form_start(form, {'attr': {'class': 'form-group'}}) }}
 
                     {# Les erreurs générales du formulaire. #}
                     {{ form_errors(form) }}
 
-                    <form class="form-group ">
                         <div class="row col-md-12 col-md-offset-1 contact-part">
                             {{ form_label(form.name, "Your name :") }}
                             {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
@@ -29,7 +28,7 @@
                             {{ form_widget(form.body, {'attr': {'class': 'form-control', 'rows': '12'}}) }}
                             {{ form_widget(form.send, {'attr': {'class': 'btn btn-primary' }}) }}
                         </div>
-                    </form>
+                    {{ form_rest(form) }}
                     {{ form_end(form) }}
                 </div>
             </article>

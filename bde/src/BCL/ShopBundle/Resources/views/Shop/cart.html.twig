@@ -19,14 +19,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					{% for article in panier %}
+				{#{% for article in cart %}#}
 					<tr>
-						<td>{{ article.name }}</td>
-						<td>{{ article.description }}</td>
-						<td>{{ article.quantity }}</td>
-						<td>{{ article.price }}</td>
+						<td>{# {{ article.name }} #} article name</td>
+						<td>{# {{ article.description }} #}article description</td>
+						<td>{# {{ article.quantity }} #} article quantity</td>
+						<td>{# {{ article.price }} #} article price</td>
 					</tr>
-					{% endfor %}
+				{#{% endfor %}#}
 				</tbody>
 				</table>
 				<div class="col-md-2 col-md-offset-10">

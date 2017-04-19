@@ -7,12 +7,12 @@
     <section class="col-md-6 col-md-offset-3 profil-section essai">
         <article class="row profil-article">
             <h1 class="col-md-10 col-md-offset-1 proposalform-title">Article Form</h1>
-                {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+                {{ form_start(form, {'attr': {'class': 'form-group'}}) }}
 
                 {# Les erreurs générales du formulaire. #}
                 {{ form_errors(form) }}
 
-            <form class="form-group ">
+
                     <div class=" row col-md-6 col-md-offset-3 proposalform-part2">
                         <div>
                             {{ form_label(form.name, "Article Name") }}
@@ -39,7 +39,7 @@
                             {{ form_widget(form.validate, {'attr': {'class': 'btn btn-primary' }}) }}
                         </div>
                     </div>
-            </form>
+            {{ form_rest(form) }}
             {{ form_end(form) }}
        </article>
     </section>

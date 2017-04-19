@@ -4,6 +4,11 @@ bcl_shop_homepage:
     requirements:
         page: \d*
 
+bcl_shop_cart:
+    path: /shop/cart
+    defaults: {_controller: BCLShopBundle:Shop:cart}
+
+
 bcl_shop_article:
     path:     /article/{id}
     defaults: { _controller: BCLShopBundle:Shop:showArticle }

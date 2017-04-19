@@ -13,13 +13,18 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+
 
 class ShopController extends Controller
 {
     public function indexAction()
     {
-        return new Response("Bonjour, ceci est la page qui contiendra le shop, c'est donc l'endroit où vous pourrez acheter votre ford mustang");
+        return $this->render('BCLShopBundle:Shop:article.html.twig') ;
+    }
+
+    public function cartAction()
+    {
+        return $this->render('BCLShopBundle:Shop:cart.html.twig');
     }
 
     public function addArticleAction(Request $request)
@@ -45,7 +50,7 @@ class ShopController extends Controller
                 $em->persist($article);
                 $em->flush();
 
-                return $this->redirectToRoute($this->generateUrl('BCL_core'));
+                return $this->redirectToRoute($this->generateUrl('BCL_Shop_homepage'));
             }
         }
 

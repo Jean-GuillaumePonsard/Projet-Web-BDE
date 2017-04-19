@@ -15,3 +15,7 @@ bcl_core_contact:
     defaults:  { _controller: BCLCoreBundle:Core:contact}
     requirements:
         _method: POST
+
+bcl_core_bdeMembers:
+    path:     /bdeMembers
+    defaults: { _controller: BCLCoreBundle:Core:bdeMembers}
