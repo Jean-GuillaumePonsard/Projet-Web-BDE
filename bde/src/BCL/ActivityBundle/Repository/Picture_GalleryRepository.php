@@ -10,4 +10,15 @@ namespace BCL\ActivityBundle\Repository;
  */
 class Picture_GalleryRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllPicture($gallery)
+    {
+        $query = $this->createQueryBuilder('a')
+            ->leftJoin('a.gallery ','s')
+            ->addSelect('s')
+            ->where('a.gallery = :gallery')
+            ->setParameter('gallery', $gallery)
+            ->getQuery();
+        return $query
+            ->getResult();
+    }
 }

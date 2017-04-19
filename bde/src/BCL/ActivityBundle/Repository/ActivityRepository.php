@@ -29,4 +29,6 @@ class ActivityRepository extends EntityRepository
 
         return new Paginator($query,true);
     }
+
+
 }

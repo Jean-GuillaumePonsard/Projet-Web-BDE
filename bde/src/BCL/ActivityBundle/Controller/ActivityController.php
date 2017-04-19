@@ -65,4 +65,20 @@ class ActivityController extends Controller
             'page'=>$page,
             'nbPages'=> $nbPages));
     }
+
+    public function showPastActivityAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $pastActivity = $em ->getRepository('BCLActivityBundle:Activity')
+            ->find($id);
+
+        $gallery = $pastActivity->getGallery();
+
+        $images =$em ->getRepository('BCLActivityBundle:Picture_Gallery')
+            ->findAllPicture($gallery);
+
+        return $this->render('BCLActivityBundle:Activity:pastActivitiesEx.html.twig', array(
+            'pastActivity' => $pastActivity,
+            'images'=>$images));
+    }
 }
