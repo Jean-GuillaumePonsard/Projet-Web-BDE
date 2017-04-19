@@ -1,0 +1,60 @@
+{# src/BCL/UserBundle/Ressources/views/User/profil.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <section class="col-md-6 col-md-offset-3 profil-section essai">
+            <article class="row profil-article">
+                <h1 class="col-md-10 col-md-offset-1 profil-title">Profil</h1>
+                <div class="col-md-4 col-md-offset-1" >
+                    <img class="img-thumbnail" src="{{ profil.UrlPicture }}" alt="profilePicture">
+                    {# form #}
+                    {{ form_start(form, {'attr': {'class': 'form-group row col-md-10 col-md-offset-1 profil-info1'}}) }}
+
+                    {{ form_errors(form) }}
+
+                    {{ form_label(form.urlPicture, "Picture") }}
+                    {{ form_widget(form.urlPicture, {'attr': {'class': 'form-control'}}) }}
+
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <h3>{{ profil.firstName }} {{ profil.lastName }}</h3><h5>{{ profil.status.name }}</h5>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </article>
+
+            <article class="lead row profil-article">
+                <div class="col-md-10 col-md-offset-1 profil-part profil-info1">
+
+
+
+                    {{ form_label(form.firstName, "First Name") }}
+                    {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+
+                    {{ form_label(form.lastName, "Last Name") }}
+                    {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+
+                    {{ form_label(form.email, "Mail Address") }}
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+
+
+                    {{ form_widget(form.modify, {'attr': {'class': 'btn btn-primary col-md-3 col-md-offset-9'}}) }}
+
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+
+
+
+
+                </div>
+            </article>
+
+        </section>
+    </div>
+{% endblock %}

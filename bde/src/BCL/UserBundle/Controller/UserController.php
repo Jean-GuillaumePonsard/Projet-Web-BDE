@@ -19,6 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\User\User;
 
 
 class UserController extends Controller
@@ -129,8 +130,37 @@ class UserController extends Controller
 
     }
 
-    public function viewProfilAction($id)
+    public function viewProfilAction($id, Request $request)
     {
-        return new Response("Afficher l'utilisateur $id");
+        $user = new Users();
+        $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($id);
+
+        //Form
+        $form = $this->get('form.factory')->createBuilder(FormType::class, $user)
+            ->add('urlPicture',  TextType::class, array('required'=>false))
+            ->add('firstName',  TextType::class)
+            ->add('lastName',  TextType::class)
+            ->add('email',  EmailType::class)
+            ->add('modify',   SubmitType::class)
+            ->getForm();
+
+
+        if($request->isMethod('POST'))
+        {
+            // Verifying every form to check what to change
+
+            $form->handleRequest($request);
+
+            if($form->isSubmitted())
+            {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+
+                return new RedirectResponse($this->generateUrl('bcl_user_profil', array('id' => $id)));
+            }
+        }
+
+        return $this->render('BCLUserBundle:User:profil.html.twig', array('profil'=>$user, 'form' => $form->createView()));
     }
 }
