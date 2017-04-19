@@ -24,9 +24,9 @@ class ActivityStatus
     /**
      * @var string
      *
-     * @ORM\Column(name="Name", type="string", length=255)
+     * @ORM\Column(name="Name_Status", type="string", length=255)
      */
-    private $name;
+    private $nameStatus;
 
 
     /**
@@ -46,9 +46,9 @@ class ActivityStatus
      *
      * @return ActivityStatus
      */
-    public function setName($name)
+    public function setNameStatus($nameStatus)
     {
-        $this->name = $name;
+        $this->nameStatus = $nameStatus;
 
         return $this;
     }
@@ -58,9 +58,9 @@ class ActivityStatus
      *
      * @return string
      */
-    public function getName()
+    public function getNameStatus()
     {
-        return $this->name;
+        return $this->nameStatus;
     }
 }
 

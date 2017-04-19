@@ -9,23 +9,25 @@ bcl_activity_futuractivities:
         page: \d*
 
 bcl_activity_futuractivity:
-    path:     /futureActivities/{id}
+    path:     /futureActivity/{id}
     defaults: { _controller: BCLActivityBundle:Activity:showFutureActivity }
     requirements:
         id: \d*
 
 bcl_activity_pastActivities:
-    path:     /pastActivities
-    defaults: { _controller: BCLActivityBundle:Activity:showAllPastActivities }
+    path:     /pastActivities/{page}
+    defaults: { _controller: BCLActivityBundle:Activity:showAllPastActivities, page: 1 }
+    requirements:
+      page: \d*
 
 bcl_activity_pastActivity:
-    path:     /pastActivities/{id}
-    defaults: { _controller: BCLActivityBundle:Activity:showFutureActivity }
+    path:     /pastActivity/{id}
+    defaults: { _controller: BCLActivityBundle:Activity:showPastActivity }
     requirements:
         id: \d*
 
 bcl_activity_proposals:
-    path:     /proposal/{page}
+    path:     /proposals/{page}
     defaults: { _controller: BCLActivityBundle:Activity:showAllProposals, page: 1 }
     requirements:
         page: \d*

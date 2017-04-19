@@ -10,4 +10,5 @@ namespace BCL\ActivityBundle\Repository;
  */
 class ActivityStatusRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }
