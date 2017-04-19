@@ -8,6 +8,7 @@ use BCL\ActivityBundle\BCLActivityBundle;
 use BCL\ActivityBundle\Entity\Activity;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class ActivityController extends Controller
 {
@@ -91,5 +92,30 @@ class ActivityController extends Controller
 
         return $this->render('BCLActivityBundle:Activity:proposalEx.html.twig', array(
             'proposal' => $proposal));
+    }
+
+    public function showFutureActivityAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $futureActivity = $em ->getRepository('BCLActivityBundle:Activity')
+            ->find($id);
+
+        $v = $futureActivity->getDateCloseVote();
+        $s = $futureActivity->getDateCloseSubscribe();
+        //$today = new \DateTime(date('Y-m-d'));
+        $a = new \DateTime(date('Y-m-d'));
+
+
+        if ($s > $a and $v < $a)
+        {
+            $b = 2;
+        }
+        elseif($v > $a)
+        {
+            $b = 1;
+        }
+
+        return $this->render('BCLActivityBundle:Activity:futurActivitiesEx.html.twig', array(
+            'futureActivity' => $futureActivity,'b'=> $b));
     }
 }

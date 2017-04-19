@@ -193,13 +193,13 @@ class Activity
     }
 
     /**
-     * Get dateCloseVote
+     * Get dateCloseSubscribe
      *
      * @return \DateTime
      */
     public function getDateCloseSubscribe()
     {
-        return $this->dateCloseVote;
+        return $this->dateCloseSubscribe;
     }
 
     /**

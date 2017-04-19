@@ -22,7 +22,7 @@
 							</p>
 						</div>
 					</div>
-					<button class="row col-md-2 col-md-offset-10 btn btn-primary" onclick="{#{{ path() }}#}">more</button>
+					<button class="row col-md-2 col-md-offset-10 btn btn-primary" onclick="window.location='{{ path('bcl_activity_futuractivity',{'id': activity.id}) }}'">more</button>
 				</article>
 		</div>
 	{% endfor %}
