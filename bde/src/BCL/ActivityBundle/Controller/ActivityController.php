@@ -36,16 +36,33 @@ class ActivityController extends Controller
             'nbPages'=> $nbPages));
     }
 
-    public function showAllFutureActivitiesAction()
+    public function showAllFutureActivitiesAction($page)
     {
+        $nbPerPage = 4;
         $em = $this->getDoctrine()->getManager();
         $futureActivities = $em ->getRepository('BCLActivityBundle:Activity')
-            ->findAllActivities('Future');
-        /*$repo = $em ->getRepository('BCLActivityBundle:Activity');
+            ->findAllActivities('Future',$page,$nbPerPage);
+        $nbPages = ceil(count($futureActivities)/$nbPerPage);
 
-        $pastActivities = $repo->findBy(array('activityStatus'=>($em->
-        getRepository('BCLActivityBundle:ActivityStatus')->findByNameStatus('Past')[0]->getId())));*/
+        return $this->render('BCLActivityBundle:Activity:futureActivities.html.twig', array(
+            'futureActivities' => $futureActivities,
+            'page'=>$page,
+            'nbPages'=> $nbPages));
+    }
 
-        return $this->render('BCLActivityBundle:Activity:futureActivities.html.twig', array('futureActivities' => $futureActivities));
+    public function showAllProposalsAction($page)
+    {
+        $nbPerPage = 4;
+        $em = $this->getDoctrine()->getManager();
+        $proposals = $em ->getRepository('BCLActivityBundle:ActivityIdea')
+            ->findAllProposals($page,$nbPerPage);
+        $nbPages = ceil(count($proposals)/$nbPerPage);
+
+
+
+        return $this->render('BCLActivityBundle:Activity:proposals.html.twig', array(
+            'proposals' => $proposals,
+            'page'=>$page,
+            'nbPages'=> $nbPages));
     }
 }

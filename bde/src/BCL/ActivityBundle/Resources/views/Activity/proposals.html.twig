@@ -9,16 +9,16 @@
 		<h1 class="col-md-12 board-title">Proposal</h1>
 	</div>
 
-	{% for activity in proposal %}
+	{% for activity in proposals %}
 		<div class="row">
 				<article class="col-xs-10 col-xs-offset-1 activity-article">
 					<div class="row" >
 						<div class="col-md-2 " >
-							<h2 class=" user-name">{{ activity.user }}</h2>
+							<h2 class=" user-name">{{activity.userCreator.firstName}} {{activity.userCreator.lastName}}</h2>
 						</div>
 						<div class="col-md-10 description">
-							<h2 class="col-md-12 description-title">{{ activity.name }}</h2>
-							<p class="col-md-12">{{ activity.description }}
+							<h2 class="col-md-12 description-title">{{ activity.nameActivityIdea }}</h2>
+							<p class="col-md-12">{{ activity.descriptionActivityIdea }}
 							</p>
 						</div>
 					</div>
@@ -28,14 +28,18 @@
 	{% endfor %}
 	<div>
 		<button class="row col-md-2 col-md-offset-5 btn btn-primary" onclick="{#{{ path() }}#}">New Proposal</button>
-	</div>		
+	</div>
 	<div class="row col-sm-6 col-md-offset-3 shop-pagination">
-				<ul class="pagination">
-		    		<li><a href="#" class="page-selector">&laquo;</a></li>
-		    		<li><a href="#" class="page-selector">1</a></li>
-		    		<li><a href="#" class="page-selector">2</a></li>
-		    		<li><a href="#" class="page-selector">3</a></li>
-		    		<li><a href="#"	class="page-selector">&raquo;</a></li>
-		  		</ul>
+        {% if nbPages != 0 %}
+			<ul class="pagination">
+				<li><a href="#" class="page-selector">&laquo;</a></li>
+                {% for p in range(1, nbPages) %}
+					<li class="{% if p == page %}active{% endif %}">
+						<a href="{{ path('bcl_activity_pastActivities', {'page': p}) }}" class="page-selector">{{ p }}</a>
+					</li>
+                {% endfor %}
+				<li><a href="#"	class="page-selector">&raquo;</a></li>
+			</ul>
+        {% endif %}
 	</div>
 {% endblock %}

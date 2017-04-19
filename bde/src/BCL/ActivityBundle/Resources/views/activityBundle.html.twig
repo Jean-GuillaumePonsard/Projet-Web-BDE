@@ -10,9 +10,9 @@
 	<nav class="row navbar" >
 		<div class="col-md-4 col-md-offset-4 navActivity">
 			<ul class="nav navbar-nav contenu" >
-				<li><a href="{{ path('bcl_activity_pastActivities') }}">Past activities</a></li>
-				<li><a href="{{ path('bcl_activity_futuractivities') }}">Future Activities</a></li>
-				<li><a href="">Proposal</a></li>
+				<li><a href="{{ path('bcl_activity_pastActivities',{'page': 1}) }}">Past activities</a></li>
+				<li><a href="{{ path('bcl_activity_futuractivities',{'page': 1}) }}">Future Activities</a></li>
+				<li><a href="{{ path('bcl_activity_proposals',{'page': 1}) }}">Proposal</a></li>
 			</ul>
 		</div>
 	</nav>

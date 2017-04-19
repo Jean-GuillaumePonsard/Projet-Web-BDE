@@ -24,23 +24,23 @@ class ActivityIdea
     /**
      * @var string
      *
-     * @ORM\Column(name="Name", type="string", length=255)
+     * @ORM\Column(name="Name_Activity_Idea", type="string", length=255)
      */
-    private $name;
+    private $nameActivityIdea;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Description", type="text")
+     * @ORM\Column(name="Description_Activity_Idea", type="text")
      */
-    private $description;
+    private $descriptionActivityIdea;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Url_Picture", type="string", length=255)
+     * @ORM\Column(name="Url_Picture_Activity_Idea", type="string", length=255)
      */
-    private $urlPicture;
+    private $urlPictureActivityIdea;
 
     /**
      * @ORM\ManyToOne(targetEntity="BCL\UserBundle\Entity\Users")
@@ -71,9 +71,9 @@ class ActivityIdea
      *
      * @return ActivityIdea
      */
-    public function setName($name)
+    public function setNameActivityIdea($nameActivityIdea)
     {
-        $this->name = $name;
+        $this->nameActivityIdea = $nameActivityIdea;
 
         return $this;
     }
@@ -83,9 +83,9 @@ class ActivityIdea
      *
      * @return string
      */
-    public function getName()
+    public function getNameActivityIdea()
     {
-        return $this->name;
+        return $this->nameActivityIdea;
     }
 
     /**
@@ -95,9 +95,9 @@ class ActivityIdea
      *
      * @return ActivityIdea
      */
-    public function setDescription($description)
+    public function setDescriptionActivityIdea($descriptionActivityIdea)
     {
-        $this->description = $description;
+        $this->descriptionActivityIdea = $descriptionActivityIdea;
 
         return $this;
     }
@@ -107,9 +107,9 @@ class ActivityIdea
      *
      * @return string
      */
-    public function getDescription()
+    public function getDescriptionActivityIdea()
     {
-        return $this->description;
+        return $this->descriptionActivityIdea;
     }
 
     /**
@@ -119,9 +119,9 @@ class ActivityIdea
      *
      * @return ActivityIdea
      */
-    public function setUrlPicture($urlPicture)
+    public function setUrlPictureActivityIdea($urlPictureActivityIdea)
     {
-        $this->urlPicture = $urlPicture;
+        $this->urlPictureActivityIdea = $urlPictureActivityIdea;
 
         return $this;
     }
@@ -131,9 +131,9 @@ class ActivityIdea
      *
      * @return string
      */
-    public function getUrlPicture()
+    public function getUrlPictureActivityIdea()
     {
-        return $this->urlPicture;
+        return $this->urlPictureActivityIdea;
     }
     /**
      * Constructor
