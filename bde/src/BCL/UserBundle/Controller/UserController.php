@@ -91,9 +91,37 @@ class UserController extends Controller
         return $this->render('BCLUserBundle:User:signIn.html.twig', array('form' => $formBuilder->createView()));
     }
 
-    public function logInAction()
+    public function logInAction(Request $request)
     {
+        $user = new Users();
 
+        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $user)
+            ->add('email',  EmailType::class)
+            ->add('password',   PasswordType::class)
+            ->add('validate',   SubmitType::class)
+            ->getForm();
+
+        if($request->isMethod('POST'))
+        {
+            $formBuilder->handleRequest($request);
+
+            if($formBuilder->isValid())
+            {
+                $emailPossible = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->findByEmail($user->getEmail());
+
+                if(empty($emailPossible) != "empty")
+                {
+                    if($emailPossible[0]->getPassword() == $user->getPassword())
+                    {
+                        echo "<script>alert('".$emailPossible[0]->getFirstName()."".$emailPossible[0]->getLastName()." tries to connect')</script>";
+
+                        return new RedirectResponse($this->generateUrl('bcl_user_profil', array('id' => $emailPossible[0]->getId())));
+                    }
+                }
+                echo "<script>alert('This account doesn t exist or wrong password')</script>";
+            }
+        }
+        return $this->render('BCLUserBundle:User:logIn.html.twig', array('form' => $formBuilder->createView()));
     }
 
     public function logOutAction()

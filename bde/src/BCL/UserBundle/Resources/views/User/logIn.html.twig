@@ -3,6 +3,31 @@
 {% extends "::layout.html.twig" %}
 
 {% block body %}
+    <div class="row" >
+        <section class="col-md-6 col-md-offset-3 connection-section essai">
+            <article class="row">
+                <div  class="col-md-10 col-md-offset-1">
+                    {{ form_start(form, {'attr': {'class': 'form-group'}}) }}
 
+                    {{ form_errors(form) }}
 
+                    <h1 class="col-md-10 col-md-offset-1 connection-title" >Connection</h1>
+                    <div class="row col-md-10 col-md-offset-1 registration-info">
+                        {{ form_label(form.email, "Mail Address") }}
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="row col-md-10 col-md-offset-1 registration-info">
+                        {{ form_label(form.password, "Password") }}
+                        {{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="row col-md-4 col-md-offset-7">
+                        {{ form_widget(form.validate, {'attr': {'class': 'btn btn-primary validate'}}) }}
+                    </div>
+
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </article>
+        </section>
+    </div>
 {% endblock %}
