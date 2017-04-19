@@ -26,13 +26,13 @@
 		</div>
 		<div id="mainMenu" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-left">
-				<li class="a"><a href="#">Home</a></li>
+				<li><a href="{{ path('bcl_core_homepage') }}">Home</a></li>
 				<li><a href="">Activities</a></li>
 				<li><a href="">Shop</a></li>
 				<li><a href="">BDE Members</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-                {% if user %}
+                {% if user is defined %}
 					<li><a href="{# {{ path() }} #}"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 					<li><a href="{# {{ path() }} #}">Log out</a></li>
 					<li><a href="{# {{ path() }} #}">Profil</a></li>
@@ -59,7 +59,7 @@
 			<p class="col-sm-2">
 				<a class="footer-color" href="https://www.google.com/maps/place/19+Avenue+Guy+de+Collongue,+69130+Écully,+France/@45.783385,4.763146,17">19 Guy de Collongue Avenue, Ecully 69130 France.</a>
 			</p>
-			<p class="col-sm-3"><a href="{# {{ path() }} #}"><img src="{{ asset('images/justice-logo.png') }} " alt="legal notices" class="img-responsive legal-notices"/>Legal Notices</a></p>
+			<p class="col-sm-3"><a href="{{path('bcl_core_legalNotices')}}"><img src="{{ asset('images/justice-logo.png') }} " alt="legal notices" class="img-responsive legal-notices"/>Legal Notices</a></p>
 			<p class="col-sm-3"><a href="{# {{ path() }} #}" ><img src="{{ asset('images/logo-email.png') }} " alt="contact" class="img-responsive contact" /> Contact</a></p>
 			<img src="{{ asset('images/logoExia.png') }}" alt="logoExia" class="col-sm-2 img-responsive logoExia">
 			<img src="{{ asset('images/logoEI2.png') }}" alt="logoEI" class="col-sm-1 img-responsive logoEI">

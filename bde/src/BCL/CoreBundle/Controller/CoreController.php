@@ -13,4 +13,14 @@ class CoreController extends Controller
     {
         return $this->render('::layout.html.twig', array('user' => ""));
     }
+
+    public function homepageAction()
+    {
+        return $this->render('BCLCoreBundle::home.html.twig');
+    }
+
+    public function legalNoticesAction()
+    {
+        return $this->render('BCLCoreBundle::LegalNotices.html.twig');
+    }
 }
