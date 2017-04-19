@@ -43,7 +43,21 @@ class Activity
     private $urlPicture;
 
     /**
-     * @ORM\ManyToOne(targetEntity="BCL\ActivityBundle\Entity\ActivityStatus")
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateCloseVote", type="datetime",nullable=true)
+     */
+    private $dateCloseVote;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateCloseSubscribe", type="datetime",nullable=true)
+     */
+    private $dateCloseSubscribe;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="BCL\ActivityBundle\Entity\ActivityStatus",)
      * @ORM\JoinColumn(nullable=false)
      */
     private $activityStatus;
@@ -58,6 +72,7 @@ class Activity
      * @ORM\JoinColumn(nullable=true)
      */
     private $gallery;
+
 
     /**
      * Get id
@@ -139,6 +154,52 @@ class Activity
     public function getUrlPicture()
     {
         return $this->urlPicture;
+    }
+
+    /**
+     * Set dateActivity
+     *
+     * @param \DateTime $dateCloseVote
+     *
+     * @return Activity
+     */
+    public function setDateCloseVote($dateCloseVote)
+    {
+        $this->dateCloseVote = $dateCloseVote;
+        return $this;
+    }
+
+    /**
+     * Get dateCloseVote
+     *
+     * @return \DateTime
+     */
+    public function getDateCloseVote()
+    {
+        return $this->dateCloseVote;
+    }
+
+    /**
+     * Set dateActivity
+     *
+     * @param \DateTime $dateCloseSubscribe
+     *
+     * @return Activity
+     */
+    public function setDateCloseSubscribe($dateCloseSubscribe)
+    {
+        $this->dateCloseVote = $dateCloseSubscribe;
+        return $this;
+    }
+
+    /**
+     * Get dateCloseVote
+     *
+     * @return \DateTime
+     */
+    public function getDateCloseSubscribe()
+    {
+        return $this->dateCloseVote;
     }
 
     /**

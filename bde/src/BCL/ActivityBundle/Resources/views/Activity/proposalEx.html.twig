@@ -10,17 +10,17 @@
         <article class="col-xs-10 col-xs-offset-1 activity-exemple-article">
             <div class="row activity-exemple-block" >
                 <div class="col-md-2 activity-exemple-part" >
-                    <img src="http://www.unesourisetmoi.info/wall32/images/paysage-fonds-ecran_09.jpg" alt="activity presentation" class="img-responsive img-activity-exemple">
+                    <img src="{{ proposal.urlPictureActivityIdea }}" alt="activity presentation" class="img-responsive img-activity-exemple">
                 </div>
                 <div class="col-md-8">
-                    <h2 class="col-md-12 description-title">{{ activity.name }}</h2>
-                    <p class="col-md-12">{{ activity.description }}
+                    <h2 class="col-md-12 description-title">{{ proposal.nameActivityIdea }}</h2>
+                    <p class="col-md-12">{{ proposal.descriptionActivityIdea }}
                     </p>
                 </div>
             </div>
             <div class="row col-md-12 back-button-block2">
                 <div class="col-md-4">
-                    <a href="{#{{ path() }}#}" class="btn btn-default">
+                    <a href="{{ path('bcl_activity_proposals',{'page': 1}) }}" class="btn btn-default">
                         <i class="glyphicon glyphicon-chevron-left"></i>
                         Back to Proposal
                     </a>

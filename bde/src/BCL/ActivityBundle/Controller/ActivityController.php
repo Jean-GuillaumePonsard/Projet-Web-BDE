@@ -81,4 +81,15 @@ class ActivityController extends Controller
             'pastActivity' => $pastActivity,
             'images'=>$images));
     }
+
+    public function showProposalAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $proposal = $em ->getRepository('BCLActivityBundle:ActivityIdea')
+            ->find($id);
+
+
+        return $this->render('BCLActivityBundle:Activity:proposalEx.html.twig', array(
+            'proposal' => $proposal));
+    }
 }
