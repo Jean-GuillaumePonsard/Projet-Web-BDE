@@ -118,4 +118,6 @@ class ActivityController extends Controller
         return $this->render('BCLActivityBundle:Activity:futurActivitiesEx.html.twig', array(
             'futureActivity' => $futureActivity,'b'=> $b));
     }
+
+
 }

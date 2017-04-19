@@ -27,28 +27,13 @@
                 <h1 class="col-md-12 gallery-title">Gallery</h1>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="row" >
-                        <img  class="col-xs-12 img-responsive img-gallery" src="http://img1.bonnesimages.com/bi/swag/swag_006.gif" alt="first-gallery-img">
-                    </div>
-                    <div class="comment-block">
-                        <div class="row">
-                            <p class="col-xs-3">23 Likes</p>
-                            <p class="col-xs-3 col-xs-offset-6">2 comments</p>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-2 like-part"><button class="like">like</button></div>
-                            {# form #}
-                        </div>
-                    </div>
-                </div>
+                {{ include("BCLActivityBundle:Activity:photo.html.twig") }}
                 <div class="col-md-6 activity-exemple-block">
                     {% if images !=0 %}
                     {% for Picture in images %}
                         <div class="row gallery-block">
                             <div class="col-xs-3">
-                                <img src="{{ Picture.urlPicture }}" alt="Picture name" class="img-responsive img-gallery" />
+                                <img src="{{ Picture.urlPicture }}" alt="Picture name" class="img-responsive img-gallery " onclick="window.location='{{ path('bcl_activity_pastActivity',{'id': pastActivity.id,'id2': Picture.id}) }}'"/>
                             </div>
                         </div>
                     {% endfor %}
