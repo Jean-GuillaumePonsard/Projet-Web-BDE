@@ -33,19 +33,48 @@ class ActivityController extends Controller
 
     public function showAllPastActivitiesAction($page)
     {
-
         $nbPerPage = 4;
-
         $em = $this->getDoctrine()->getManager();
+        $a = new \DateTime(date('Y-m-d'));
+        $Allactivitypast = $em->getRepository('BCLActivityBundle:Activity')->findByActivityStatus($em->getRepository('BCLActivityBundle:ActivityStatus')->findOneBy(array('nameStatus'=>'Past')));
+        foreach ($Allactivitypast as $pastActivity) {
+            $s = $pastActivity->getDateCloseVote();
+            if (!is_null($s))
+            {
+                if ($s < $a)
+                {
+                    $dates = null;
+                    $dates= $em->getRepository('BCLActivityBundle:ActivityDate')->findByActivity($pastActivity->getId());
+                    foreach ($dates as $date) {
+
+                        if (!is_null($date->getUser())) {
+                            $nb = count($date->getUser());
+                            $d = $date->getDateActivity()->format('F d Y');
+                            $vote = array($d => $nb);
+
+                        }
+
+                        if (isset($vote)) {
+                            while ($nbvote = current($vote)) {
+                                if ($nbvote == max($vote)) {
+                                    $dateFinal = key($vote);
+                                }
+                                next($vote);
+                            }
+                        }
+
+                        if (isset($dateFinal)) {
+                            $pastActivity->setDateF($dateFinal);
+                        }
+
+                    }
+                }
+            }
+        }
         $pastActivities = $em ->getRepository('BCLActivityBundle:Activity')
             ->findAllActivities('Past',$page,$nbPerPage);
+
         $nbPages = ceil(count($pastActivities)/$nbPerPage);
-
-
-
-
-
-
         return $this->render('BCLActivityBundle:Activity:pastActivities.html.twig', array(
             'pastActivities' => $pastActivities,
             'page'=>$page,
@@ -57,6 +86,55 @@ class ActivityController extends Controller
     {
         $nbPerPage = 4;
         $em = $this->getDoctrine()->getManager();
+        $Allactivity = $em->getRepository('BCLActivityBundle:Activity')->findByActivityStatus($em->getRepository('BCLActivityBundle:ActivityStatus')->findOneBy(array('nameStatus'=>'Future')));
+        foreach ($Allactivity as $value)
+        {
+            $s = $value->getDateCloseVote();
+            //$today = new \DateTime(date('Y-m-d'));
+            $a = new \DateTime(date('Y-m-d'));
+            if (!is_null($s))
+            {if ($s <$a)
+            {
+                $b = 1;
+                $dates = $em->getRepository('BCLActivityBundle:ActivityDate')->findByActivity($value->getId());
+                foreach ($dates as $date)
+                {
+                    foreach ($dates as $date)
+                    {
+
+                        if (!is_null($date->getUser()))
+                        {
+                            $nb =count($date->getUser());
+                            $d=$date->getDateActivity()->format('F d Y');
+                            $vote= array($d=>$nb);
+                        }
+                        if (isset($vote))
+                        {
+                            while ($nbvote = current($vote)) {
+                                if ($nbvote == max($vote)) {
+                                    $dateFinal =key($vote);
+                                }
+                                next($vote);
+                            }
+                        }
+                        if (isset($dateFinal))
+                        {$value->setDateF($dateFinal);}
+
+                    }
+                }
+            }else{$b=2;}
+            }
+            if (!is_null($value->getDateF())) {
+                $f = $value->getDateF();
+                if ($f < $a) {
+                    $value->setActivityStatus($em->getRepository('BCLActivityBundle:ActivityStatus')->findOneBy(array('nameStatus' => 'Past')));
+                    $gallery = new Gallery();
+                    $value->setGallery($gallery);
+                    $em->persist($value);
+                    $em->flush();
+                }
+            }
+        }
         $futureActivities = $em ->getRepository('BCLActivityBundle:Activity')
             ->findAllActivities('Future',$page,$nbPerPage);
         $nbPages = ceil(count($futureActivities)/$nbPerPage);
@@ -64,7 +142,8 @@ class ActivityController extends Controller
         return $this->render('BCLActivityBundle:Activity:futureActivities.html.twig', array(
             'futureActivities' => $futureActivities,
             'page'=>$page,
-            'nbPages'=> $nbPages));
+            'nbPages'=> $nbPages,
+            'b'=> $b));
     }
 
     public function showAllProposalsAction($page)
@@ -191,10 +270,6 @@ class ActivityController extends Controller
             $comment = null;
             $nbcomment = null;
         }
-
-
-
-
 
         return $this->render('BCLActivityBundle:Activity:pastActivitiesEx.html.twig', array(
             'pastActivity' => $pastActivity,

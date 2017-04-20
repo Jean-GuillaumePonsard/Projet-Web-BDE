@@ -74,6 +74,8 @@ class Activity
     private $gallery;
 
 
+    private $dateF;
+
     /**
      * Get id
      *
@@ -289,5 +291,21 @@ class Activity
     public function getGallery()
     {
         return $this->gallery;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateF()
+    {
+        return $this->dateF;
+    }
+
+    /**
+     * @param mixed $dateF
+     */
+    public function setDateF($dateF)
+    {
+        $this->dateF = $dateF;
     }
 }
