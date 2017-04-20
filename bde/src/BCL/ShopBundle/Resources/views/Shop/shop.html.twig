@@ -24,6 +24,14 @@
 			{% block article %}
 			{% endblock %}
 
+            {% if app.session.get('status') %}
+                {% if app.session.get('status')[0] == "Admin" or  app.session.get('status')[0] == "Teacher" %}
+					<div>
+						<button class="row col-md-2 col-md-offset-5 btn btn-primary" onclick="window.location='{{ path('bcl_shop_add_article') }}'">New Article</button>
+					</div>
+                {% endif %}
+            {% endif %}
+
 			
 		</section>
 	</div>

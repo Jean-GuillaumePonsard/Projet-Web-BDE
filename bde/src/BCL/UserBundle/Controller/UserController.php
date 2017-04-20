@@ -81,8 +81,6 @@ class UserController extends Controller
             }
         }
 
-
-
         return $this->render('BCLUserBundle:User:signIn.html.twig', array('form' => $formBuilder->createView()));
     }
 
