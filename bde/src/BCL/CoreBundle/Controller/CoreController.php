@@ -17,7 +17,7 @@ class CoreController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('BCLCoreBundle::home.html.twig', array('user' => ""));
+        return $this->render('BCLCoreBundle::home.html.twig'/*, array('user' => '28')*/);
     }
 
 
