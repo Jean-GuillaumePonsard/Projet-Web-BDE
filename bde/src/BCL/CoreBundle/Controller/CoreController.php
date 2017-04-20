@@ -54,7 +54,7 @@ class CoreController extends Controller
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Contact from BCL')
                     ->setFrom('adrien.thevenet@viacesi.fr')
-                    ->setTo($this->container->getParameter('bcl_core.email.contact_email'))
+                    ->setTo($this->container->getParameter('bcl_core.emails.contact_email'))
                     ->setBody($this->renderView('BCLCoreBundle::contactEmail.txt.twig', array('contact' => $contact)));
                 $this->get('mailer')->send($message);
 
