@@ -6,6 +6,7 @@ namespace BCL\ActivityBundle\Controller;
 
 use BCL\ActivityBundle\BCLActivityBundle;
 use BCL\ActivityBundle\Entity\Activity;
+use BCL\ActivityBundle\Entity\PictureComment;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Validator\Constraints\DateTime;
@@ -80,8 +81,9 @@ class ActivityController extends Controller
             'nbPages'=> $nbPages));
     }
 
-    public function showPastActivityAction($id,$id2)
+    public function showPastActivityAction($id,$id2, Request $query)
     {
+
         $em = $this->getDoctrine()->getManager();
         $pastActivity = $em ->getRepository('BCLActivityBundle:Activity')
             ->find( $id);
@@ -94,14 +96,84 @@ class ActivityController extends Controller
         $image = $em ->getRepository('BCLActivityBundle:Picture_Gallery')
             ->find($id2);
 
-        $nblike =count($image->getPersonsWhoLiked());
 
-        $picture = $image->getId();
-        $comment =$em ->getRepository('BCLActivityBundle:PictureComment')
-            ->findAllComment($picture);
+        if(!empty($image))
+        {
+            if(!empty($query->query->get('like')))
+            {
+                $session = $this->get('session');
+                if(!empty($session->get('userId')))
+                {
+                    $userId = $session->get('userId')[0];
+                }
+                else
+                {
+                    return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+                }
+
+                $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
+
+                $addlike = true;
+                foreach ($image->getPersonsWhoLiked() as $personWhoLike )
+                {
+                    if($user === $personWhoLike)
+                    {
+                        $addlike = false;
+                    }
+                }
+                if($addlike)
+                {
+                    $image->addPersonsWhoLiked($user);
+
+                    $em->persist($image);
+                    $em->flush();
+                }
+            }
+
+            if(!empty($query->query->get('comment')))
+            {
+                $session = $this->get('session');
+                if(!empty($session->get('userId')))
+                {
+                    $userId = $session->get('userId')[0];
+                }
+                else
+                {
+                    return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+                }
+
+                $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
+
+                $pictureComment = new PictureComment();
+
+                $pictureComment->setUserCommented($user);
+                $pictureComment->setContent($query->query->get('comment'));
+                $pictureComment->setImageCommented($image);
+
+                $em->persist($pictureComment);
+                $em->flush();
+
+                return new RedirectResponse($this->generateUrl('bcl_activity_pastActivity', array('id'=>$id, 'id2'=>$id2)));
+
+            }
+
+            $nblike =count($image->getPersonsWhoLiked());
+            $picture = $image->getId();
+            $comment =$em ->getRepository('BCLActivityBundle:PictureComment')
+                ->findAllComment($picture);
 
 
-        $nbcomment =count($comment);
+            $nbcomment =count($comment);
+        }else
+        {
+            $nblike = null;
+            $picture = null;
+            $comment = null;
+            $nbcomment = null;
+        }
+
+
+
 
 
         return $this->render('BCLActivityBundle:Activity:pastActivitiesEx.html.twig', array(

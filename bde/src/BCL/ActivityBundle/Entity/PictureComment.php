@@ -48,6 +48,11 @@ class PictureComment
     private $userCommented;
 
 
+    public function __construct()
+    {
+        $this->setDateComment(new \DateTime());
+    }
+
     /**
      * Get id
      *

@@ -1,23 +1,27 @@
 
                 <div class="col-md-6">
                     <div class="row" >
-                        <img  class="col-xs-12 img-responsive img-gallery" src="{{ image.urlPicture }}" alt="first-gallery-img">
+                        <img  class="col-xs-12 img-responsive img-gallery" src="{% if image != null %}{{ image.urlPicture }}{% endif %}" alt="first-gallery-img">
                     </div>
                     <div class="comment-block">
                         <div class="row">
                             <p class="col-xs-3">{{ like }} Likes</p>
-                            <p class="col-xs-3 col-xs-offset-6">{{ comment }}comments</p>
+                            <p class="col-xs-3 col-xs-offset-6">{{ comment }} comments</p>
                         </div>
                         {% for com in comments %}
                         <div class="row">
-                            <h4 class="col-xs-12">{{ com.userCommented.firstName }} </h4>
-                            <p class="col-xs-12">{{ com.content }}
+                            <h4 class="col-xs-12">{{ com.userCommented.firstName }} {{ com.userCommented.lastName }} - <i>{{ com.dateComment|date('Y-m-d H:m:s') }}</i></h4>
+                            <p class="col-xs-11 col-xs-offset-1">{{ com.content }}
                             </p>
                         </div>
                         {% endfor %}
                         <div class="row">
-                            <div class="col-xs-2 like-part"><button class="like">like</button></div>
+                            <div class="col-xs-2 like-part"><button class="like" onclick="window.location.replace('{{ path('bcl_activity_pastActivity',{'id': pastActivity.id,'id2': image.id, 'like': image.id}) }}')">like</button></div>
                             {# form #}
+                            <form class="col-xs-10 comment-part">
+                                <input type="text" name="comment" value="add comment" class="col-xs-9 comment-info">
+                                <input type="submit" name="submitcomment" value="submit" class="col-xs-3 submit-comment">
+                            </form>
                         </div>
                     </div>
                 </div>

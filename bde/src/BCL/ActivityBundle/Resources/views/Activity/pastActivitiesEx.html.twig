@@ -29,7 +29,7 @@
             <div class="row">
                 {{ include("BCLActivityBundle:Activity:photo.html.twig") }}
                 <div class="col-md-6 activity-exemple-block">
-                    {% if images !=0 %}
+                    {% if images != null %}
                         {% set nbArticle = 4 %}
                     {% for Picture in images %}
                         {% if loop.index0 % nbArticle == 0 %}
@@ -45,11 +45,11 @@
                     {% endfor %}
                     {% endif %}
 
-                    <div class="row add-img-part">
+                    {#<div class="row add-img-part">
                         <div class="col-xs-5 col-xs-offset-7">
                             <input type="file" class="form-control-file">
                         </div>
-                    </div>
+                    </div>#}
                 </div>
                 <div class="row col-md-12 back-button-block2">
                     <div class="col-md-4">

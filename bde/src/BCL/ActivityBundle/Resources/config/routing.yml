@@ -26,14 +26,12 @@ bcl_activity_pastActivities:
     requirements:
       page: \d*
 
-
-
-
 bcl_activity_pastActivity:
     path:     /pastActivity/{id}/image/{id2}
     defaults: { _controller: BCLActivityBundle:Activity:showPastActivity ,id2: 1}
     requirements:
         id: \d*
+        id2: \d*
 
 bcl_activity_proposals:
     path:     /proposals/{page}
