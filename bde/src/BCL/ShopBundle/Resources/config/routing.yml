@@ -27,6 +27,10 @@ bcl_shop_remove_article_off_cart:
     requirements:
         id: \d*
 
+bcl_shop_cart_pay:
+    path:     /shop/cart/pay
+    defaults: {_controller: BCLShopBundle:Shop:payCart}
+
 bcl_shop_add_article:
     path:     /article/addArticle
     defaults: { _controller: BCLShopBundle:Shop:addArticle }

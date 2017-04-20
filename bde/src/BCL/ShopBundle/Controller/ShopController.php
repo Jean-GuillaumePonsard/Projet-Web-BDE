@@ -151,4 +151,34 @@ class ShopController extends Controller
 
         return new RedirectResponse($this->generateUrl('bcl_shop_homepage'));
     }
+
+    public function payCartAction()
+    {
+        // user Id will be defined with a session parameter
+        $userId = 28;
+        $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
+        if($user == null)
+        {
+            throw new HttpException();
+        }
+
+        // Get Last Client Cart
+        $manager = $this->getDoctrine()->getManager();
+        $clientOrderRepo = $manager->getRepository('BCLShopBundle:ClientOrder');
+
+        if(!empty($clientOrderRepo->findBy(array('client' => $userId,'paid'=>0 ), array('dateOrder'=>'DESC'), 1, 0)))
+        {
+            $cart = $clientOrderRepo->findBy(array('client' => $userId,'paid'=>0 ), array('dateOrder'=>'DESC'), 1, 0)[0];
+        }else
+        {
+            return new RedirectResponse($this->generateUrl('bcl_shop_homepage'));
+        }
+
+        $cart->setPaid(true);
+
+        $manager->persist($cart);
+        $manager->flush();
+
+        return new RedirectResponse($this->generateUrl('bcl_shop_homepage'));
+    }
 }

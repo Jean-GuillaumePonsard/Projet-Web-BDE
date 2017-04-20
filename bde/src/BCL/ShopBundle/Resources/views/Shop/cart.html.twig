@@ -22,19 +22,28 @@
 				{% set totalprice = 0 %}
 				{% for article in cartArticles %}
 					<tr>
-						<td>{{ article.article.name }}</td>
-						<td>{{ article.article.description }}</td>
-						<td>{{ article.quantity }}</td>
-						<td>{{ article.article.price }}</td>
+						{% if article is defined %}
+						<td>{% if article.article.name is defined %} {{ article.article.name }} {% endif %}</td>
+						<td>{% if article.article.description is defined %} {{ article.article.description }} {% endif %}</td>
+						<td>{% if article.quantity is defined %} {{ article.quantity }} {% endif %}</td>
+						<td>{% if article.article.price is defined %} {{ article.article.price }} {% endif %}</td>
+						{% endif %}
 					</tr>
-					{% set totalprice = totalprice + article.article.price %}
+					{% if article is defined %}
+						{% if article.article.price is defined %}
+							{% set totalprice = totalprice + article.article.price * article.quantity %}
+						{% endif %}
+                    {% endif %}
                 {% endfor %}
             </tbody>
             </table>
             <div class="col-md-2 col-md-offset-10">
-            Total: {{ totalprice }} €
-            {# form #}
-				</div>
+				Total: {{ totalprice }} €
+				{# pay #}
+				{% if totalprice > 0 %}
+					<a href="{{ path('bcl_shop_cart_pay') }}"><button type="button" class="btn btn-primary validate">Pay</button></a>
+				{% endif %}
+			</div>
 
 			</article>
 		</section>
