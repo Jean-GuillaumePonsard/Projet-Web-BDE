@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Validator\Constraints\DateTime;
 use BCL\ActivityBundle\Entity\ActivityIdea;
+use BCL\UserBundle\Entity\Users;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -125,6 +126,7 @@ class ActivityController extends Controller
 
     public function showFutureActivityAction($id)
     {
+
         $em = $this->getDoctrine()->getManager();
         $futureActivity = $em ->getRepository('BCLActivityBundle:Activity')
             ->find($id);
@@ -150,6 +152,20 @@ class ActivityController extends Controller
 
     public function newProposalAction(Request $request)
     {
+        $session = $this->get('session');
+        if(!empty($session->get('userId')))
+        {
+            $userId = $session->get('userId')[0];
+        }
+        else
+        {
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+        }
+
+
+        $user = new Users();
+        $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
+
         $activityIdea = new ActivityIdea();
 
         $form = $this->get('form.factory')->createBuilder(FormType::class, $activityIdea)
@@ -167,6 +183,7 @@ class ActivityController extends Controller
             if ($form->isValid())
             {
                 $em = $this->getDoctrine()->getManager();
+                $activityIdea->setUserCreator($user);
                 $em->persist($activityIdea);
                 $em->flush();
                 return new RedirectResponse($this->generateUrl('bcl_activity_proposals', array('page'=> '1')));
