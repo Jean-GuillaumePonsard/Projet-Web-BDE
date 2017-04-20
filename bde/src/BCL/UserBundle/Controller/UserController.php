@@ -117,6 +117,10 @@ class UserController extends Controller
                     if($emailPossible[0]->getPassword() == $user->getPassword())
                     {
                         echo "<script>alert('".$emailPossible[0]->getFirstName()."".$emailPossible[0]->getLastName()." tries to connect')</script>";
+                       $ok=$this->get('session');
+                       $ok->set('userId',array($emailPossible[0]->getId()));
+                        $ok->set('status',array($emailPossible[0]->getStatus()->getName()));
+
 
                         return new RedirectResponse($this->generateUrl('bcl_user_profil', array('id' => $emailPossible[0]->getId())));
                     }
@@ -129,14 +133,21 @@ class UserController extends Controller
 
     public function logOutAction()
     {
-
+        $ok=$this->get('session');
+        $ok->remove('userId');
+        $ok->remove('status');
+        return $this->render('BCLCoreBundle::home.html.twig');
     }
 
     public function viewProfilAction($id, Request $request)
     {
         $user = new Users();
         $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($id);
+        /*if (!is_null($_SESSION["status"]))
+        {
+            echo "<script>alert('bonjour')</script>";
 
+        }*/
         //Form
         $form = $this->get('form.factory')->createBuilder(FormType::class, $user)
             ->add('urlPicture',  TextType::class, array('required'=>false))
