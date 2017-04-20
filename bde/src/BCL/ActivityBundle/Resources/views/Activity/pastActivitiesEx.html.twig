@@ -45,11 +45,22 @@
                     {% endfor %}
                     {% endif %}
 
-                    {#<div class="row add-img-part">
+                    <div class="row add-img-part">
                         <div class="col-xs-5 col-xs-offset-7">
-                            <input type="file" class="form-control-file">
+                            {{ form_start(form) }}
+
+                            {{ form_errors(form) }}
+
+                            {{ form_label(form.urlPicture, "Url of Picture") }}
+                            {{ form_widget(form.urlPicture, {'attr': {'class': 'form-control'}}) }}
+
+                            {{ form_widget(form.add, {'attr': {'class': 'btn btn-primary validate'}}) }}
+
+
+                            {{ form_rest(form) }}
+                            {{ form_end(form) }}
                         </div>
-                    </div>#}
+                    </div>
                 </div>
                 <div class="row col-md-12 back-button-block2">
                     <div class="col-md-4">

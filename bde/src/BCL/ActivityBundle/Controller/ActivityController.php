@@ -6,7 +6,9 @@ namespace BCL\ActivityBundle\Controller;
 
 use BCL\ActivityBundle\BCLActivityBundle;
 use BCL\ActivityBundle\Entity\Activity;
+use BCL\ActivityBundle\Entity\Picture_Gallery;
 use BCL\ActivityBundle\Entity\PictureComment;
+use Symfony\Component\DomCrawler\Image;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Validator\Constraints\DateTime;
@@ -96,6 +98,24 @@ class ActivityController extends Controller
         $image = $em ->getRepository('BCLActivityBundle:Picture_Gallery')
             ->find($id2);
 
+        $newImage = new Picture_Gallery();
+        $newImage->setGallery($gallery);
+        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $newImage)
+            ->add('urlPicture',  UrlType::class)
+            ->add('add',   SubmitType::class)
+            ->getForm();
+
+        if($query->isMethod('POST'))
+        {
+            $formBuilder->handleRequest($query);
+            if($formBuilder->isValid())
+            {
+                $em->persist($newImage);
+                $em->flush();
+                return new RedirectResponse($this->generateUrl('bcl_activity_pastActivity', array('id'=>$id, 'id2'=>$newImage->getId())));
+            }
+            return new RedirectResponse($this->generateUrl('bcl_activity_pastActivity', array('id'=>$id, 'id2'=>$id2)));
+        }
 
         if(!empty($image))
         {
@@ -182,7 +202,8 @@ class ActivityController extends Controller
             'image'=> $image,
             'like'=>$nblike,
             'comments'=>$comment,
-            'comment'=>$nbcomment));
+            'comment'=>$nbcomment,
+            'form'=>$formBuilder->createView()));
     }
 
     public function showProposalAction($id)
