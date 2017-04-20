@@ -27,7 +27,7 @@
 		</div>
 	{% endfor %}
 	{% if app.session.get('status')  %}
-		{% if app.session.get('status')!='Student' %}
+		{% if app.session.get('status') == 'Admin' or app.session.get('status') == 'BDEMember' or  app.session.get('status') == 'Teacher' %}
 	<div>
 		<button class="row col-md-2 col-md-offset-5 btn btn-primary" onclick="window.location='{{ path('bcl_activity_newFuturactivity') }}'">New Activity</button>
 	</div>
