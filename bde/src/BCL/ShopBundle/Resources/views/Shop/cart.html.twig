@@ -19,18 +19,20 @@
 					</tr>
 				</thead>
 				<tbody>
-				{#{% for article in panier %}#}
+				{% set totalprice = 0 %}
+				{% for article in cartArticles %}
 					<tr>
-						<td>{#{{ article.name }}#}</td>
-						<td>{#{{ article.description }}#}</td>
-						<td>{#{{ article.quantity }}#}</td>
-						<td>{#{{ article.price }}#}</td>
+						<td>{{ article.article.name }}</td>
+						<td>{{ article.article.description }}</td>
+						<td>{{ article.quantity }}</td>
+						<td>{{ article.article.price }}</td>
 					</tr>
-                {#{% endfor %}#}
+					{% set totalprice = totalprice + article.article.price %}
+                {% endfor %}
             </tbody>
             </table>
             <div class="col-md-2 col-md-offset-10">
-            Total: 150 000 €
+            Total: {{ totalprice }} €
             {# form #}
 				</div>
 

@@ -31,7 +31,34 @@ class ShopController extends Controller
 
     public function cartAction()
     {
-        return $this->render('BCLShopBundle:Shop:cart.html.twig');
+        // user Id will be defined with a session parameter
+        $userId = 28;
+        $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
+        if($user == null)
+        {
+            throw new HttpException();
+        }
+
+        // Get Last Client Cart
+        $cart = new ClientOrder();
+        $toCompose = new To_Compose();
+        $cartArticles = array();
+
+        $manager = $this->getDoctrine()->getManager();
+        $clientOrderRepo = $manager->getRepository('BCLShopBundle:ClientOrder');
+
+        if(!empty($clientOrderRepo->findBy(array('client' => $userId,'paid'=>0 ), array('dateOrder'=>'DESC'), 1, 0)))
+        {
+            $cart = $clientOrderRepo->findBy(array('client' => $userId,'paid'=>0 ), array('dateOrder'=>'DESC'), 1, 0)[0];
+
+            $cartArticles = $manager->getRepository('BCLShopBundle:To_Compose')->findByClientOrder($cart);
+        }else
+        {
+            $cartArticles[0] =  $toCompose;
+        }
+
+
+        return $this->render('BCLShopBundle:Shop:cart.html.twig', array('cartArticles' => $cartArticles ));
     }
 
     public function addArticleAction(Request $request)
