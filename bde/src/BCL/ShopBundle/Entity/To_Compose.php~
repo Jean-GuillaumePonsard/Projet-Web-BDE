@@ -75,52 +75,5 @@ class To_Compose
     {
         return $this->quantity;
     }
-
-    /**
-     * Set clientOrder
-     *
-     * @param \BCL\ShopBundle\Entity\ClientOrder $clientOrder
-     *
-     * @return To_Compose
-     */
-    public function setClientOrder(\BCL\ShopBundle\Entity\ClientOrder $clientOrder)
-    {
-        $this->clientOrder = $clientOrder;
-
-        return $this;
-    }
-
-    /**
-     * Get clientOrder
-     *
-     * @return \BCL\ShopBundle\Entity\ClientOrder
-     */
-    public function getClientOrder()
-    {
-        return $this->clientOrder;
-    }
-
-    /**
-     * Set article
-     *
-     * @param \BCL\ShopBundle\Entity\Article $article
-     *
-     * @return To_Compose
-     */
-    public function setArticle(\BCL\ShopBundle\Entity\Article $article)
-    {
-        $this->article = $article;
-
-        return $this;
-    }
-
-    /**
-     * Get article
-     *
-     * @return \BCL\ShopBundle\Entity\Article
-     */
-    public function getArticle()
-    {
-        return $this->article;
-    }
 }
+

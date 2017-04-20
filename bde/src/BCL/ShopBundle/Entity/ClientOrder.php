@@ -41,6 +41,11 @@ class ClientOrder
      */
     private $client;
 
+    public function __construct()
+    {
+        $this->setDateOrder(new \DateTime());
+    }
+
 
     /**
      * Get id

@@ -5,14 +5,20 @@
 namespace BCL\ShopBundle\Controller;
 
 use BCL\ShopBundle\Entity\Article;
+use BCL\ShopBundle\Entity\ClientOrder;
+use BCL\ShopBundle\Entity\To_Compose;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 
 class ShopController extends Controller
@@ -51,10 +57,71 @@ class ShopController extends Controller
                 $em->persist($article);
                 $em->flush();
 
-                return $this->redirectToRoute($this->generateUrl('BCL_Shop_homepage'));
+                return $this->redirectToRoute($this->generateUrl('bcl_shop_homepage'));
             }
         }
 
         return $this->render('BCLShopBundle:Shop:newArticle.html.twig', array('form' => $form->createView() ));
+    }
+
+    public function addArticleToCartAction($id, Request $query)
+    {
+        // user Id will be defined with a session parameter
+        $userId = 28;
+        $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
+        if($user == null)
+        {
+            throw new HttpException();
+        }
+
+        // Get Last Client Cart
+        $cart = new ClientOrder();
+
+        $manager = $this->getDoctrine()->getManager();
+        $clientOrderRepo = $manager->getRepository('BCLShopBundle:ClientOrder');
+
+        if(!empty($clientOrderRepo->findBy(array('client' => $userId,'paid'=>0 ), array('dateOrder'=>'DESC'), 1, 0)))
+        {
+            $cart = $clientOrderRepo->findBy(array('client' => $userId,'paid'=>0 ), array('dateOrder'=>'DESC'), 1, 0)[0];
+        }else
+        {
+            $cart->setClient($user);
+            $cart->setPaid(0);
+
+            $manager->persist($cart);
+            $manager->flush();
+        }
+
+        // Creating a new To Compose Object to match the cart and the product
+        $quantityProduct = (int)$query->query->get('quantity');
+
+        //Set Quantity
+        $toCompose = new To_Compose();
+        if(!empty($quantityProduct) AND $quantityProduct > 0)
+        {
+            $toCompose->setQuantity($quantityProduct);
+        }
+        else{
+            throw new Exception();
+        }
+
+        //Set Article
+        $articleRepo = $manager->getRepository('BCLShopBundle:Article');
+        $article = $articleRepo->find($id);
+
+        if(empty($article))
+        {
+            throw new Exception();
+        }
+
+        $toCompose->setArticle($article);
+
+        //Set Client Cart
+        $toCompose->setClientOrder($cart);
+
+        $manager->persist($toCompose);
+        $manager->flush();
+
+        return new RedirectResponse($this->generateUrl('bcl_shop_homepage'));
     }
 }
