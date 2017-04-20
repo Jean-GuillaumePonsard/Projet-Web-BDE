@@ -115,7 +115,7 @@ class ShopController extends Controller
                 $em->persist($article);
                 $em->flush();
 
-                return $this->redirectToRoute($this->generateUrl('bcl_shop_homepage'));
+                return new RedirectResponse($this->generateUrl('bcl_shop_homepage'));
             }
         }
 
