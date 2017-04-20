@@ -55,6 +55,6 @@ class ShopController extends Controller
             }
         }
 
-        return $this->render('BCLShopBundle:Shop:newArticle.html.twig', array('form' => $form->createView(), ));
+        return $this->render('BCLShopBundle:Shop:newArticle.html.twig', array('form' => $form->createView() ));
     }
 }

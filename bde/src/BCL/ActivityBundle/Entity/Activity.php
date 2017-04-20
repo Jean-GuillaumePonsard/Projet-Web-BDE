@@ -188,7 +188,7 @@ class Activity
      */
     public function setDateCloseSubscribe($dateCloseSubscribe)
     {
-        $this->dateCloseVote = $dateCloseSubscribe;
+        $this->dateCloseSubscribe = $dateCloseSubscribe;
         return $this;
     }
 
@@ -205,11 +205,11 @@ class Activity
     /**
      * Set activityStatus
      *
-     * @param \BCL\ActivityBundle\Entity\Activity $activityStatus
+     * @param \BCL\ActivityBundle\Entity\ActivityStatus $activityStatus
      *
      * @return Activity
      */
-    public function setActivityStatus(\BCL\ActivityBundle\Entity\Activity $activityStatus)
+    public function setActivityStatus(\BCL\ActivityBundle\Entity\ActivityStatus $activityStatus)
     {
         $this->activityStatus = $activityStatus;
 
@@ -219,7 +219,7 @@ class Activity
     /**
      * Get activityStatus
      *
-     * @return \BCL\ActivityBundle\Entity\Activity
+     * @return \BCL\ActivityBundle\Entity\ActivityStatus
      */
     public function getActivityStatus()
     {

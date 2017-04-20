@@ -34,10 +34,10 @@
 			<ul class="nav navbar-nav navbar-right">
                 {% if user is defined %}
 					<li><a href="{{ path('bcl_shop_cart') }}"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-					<li><a href="{# {{ path() }} #}">Log out</a></li>
-					<li><a href="{# {{ path() }} #}">Profil</a></li>
+					<li><a href="{{ path('bcl_user_logOut') }}">Log out</a></li>
+					<li><a href="{{ path('bcl_user_profil') }}">Profil</a></li>
                 {% else %}
-					<li><a href="{# {{ path() }} #}">Log in</a></li>
+					<li><a href="{{ path('bcl_user_logIn') }}">Log in</a></li>
 					<li><a href="{{ path('bcl_user_signIn') }}">Sign up</a></li>
                 {% endif %}
 				<li><a href="">FR</a></li>

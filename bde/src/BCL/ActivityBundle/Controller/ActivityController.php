@@ -9,6 +9,15 @@ use BCL\ActivityBundle\Entity\Activity;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Validator\Constraints\DateTime;
+use BCL\ActivityBundle\Entity\ActivityIdea;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
 class ActivityController extends Controller
 {
@@ -137,6 +146,70 @@ class ActivityController extends Controller
 
         return $this->render('BCLActivityBundle:Activity:futurActivitiesEx.html.twig', array(
             'futureActivity' => $futureActivity,'b'=> $b));
+    }
+
+    public function newProposalAction(Request $request)
+    {
+        $activityIdea = new ActivityIdea();
+
+        $form = $this->get('form.factory')->createBuilder(FormType::class, $activityIdea)
+            ->add('nameActivityIdea',           TextType::class)
+            ->add('descriptionActivityIdea',    TextareaType::class)
+            ->add('urlPictureActivityIdea',    UrlType::class)
+            ->add('validate',                   SubmitType::class)
+            ->getForm()
+        ;
+
+        if ($request->isMethod('POST'))
+        {
+            $form->handleRequest($request);
+
+            if ($form->isValid())
+            {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($activityIdea);
+                $em->flush();
+                return new RedirectResponse($this->generateUrl('bcl_activity_proposals', array('page'=> '1')));
+            }
+        }
+
+        return $this->render('BCLActivityBundle:Activity:proposalForm.html.twig', array('form' => $form->createView()));
+    }
+
+
+    public function newFuturactivityAction(Request $request)
+    {
+        $activity = new Activity();
+        $activity->setActivityStatus($this->getDoctrine()->getManager()->getRepository('BCLActivityBundle:ActivityStatus')->findByNameStatus("Future")[0]);
+
+
+        $form = $this->get('form.factory')->createBuilder(FormType::class, $activity)
+            ->add('name',               TextType::class)
+            ->add('description',        TextareaType::class)
+            ->add('dateCloseVote',      DateType::class)
+            ->add('dateCloseSubscribe', DateType::class)
+            ->add('urlPicture',         UrlType::class)
+            ->add('validate',           SubmitType::class)
+            ->getForm()
+        ;
+
+        if ($request->isMethod('POST'))
+        {
+            $form->handleRequest($request);
+
+            if ($form->isValid())
+            {
+                $em = $this->getDoctrine()->getManager();
+
+                $em->persist($activity);
+
+                $em->flush();
+
+                return new RedirectResponse($this->generateUrl('bcl_activity_futuractivities',array('page'=>'1')));
+            }
+
+        }
+        return $this->render('BCLActivityBundle:Activity:newFutureActivity.html.twig', array('form' => $form->createView()));
     }
 
 

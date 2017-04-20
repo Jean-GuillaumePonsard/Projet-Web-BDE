@@ -14,6 +14,12 @@ bcl_activity_futuractivity:
     requirements:
         id: \d*
 
+bcl_activity_newFuturactivity:
+    path:     /newFutureActivity
+    defaults: {_controller: BCLActivityBundle:Activity:newFuturActivity}
+
+
+
 bcl_activity_pastActivities:
     path:     /pastActivities/{page}
     defaults: { _controller: BCLActivityBundle:Activity:showAllPastActivities, page: 1 }
@@ -40,3 +46,7 @@ bcl_activity_proposal:
     defaults: { _controller: BCLActivityBundle:Activity:showProposal }
     requirements:
         id: \d*
+
+bcl_activity_newProposal:
+    path:   /newProposal
+    defaults: {_controller: BCLActivityBundle:Activity:newProposal}
