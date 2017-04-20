@@ -1,14 +1,20 @@
 
                 <div class="col-md-6">
                     <div class="row" >
-                        <img  class="col-xs-12 img-responsive img-gallery" src="http://img1.bonnesimages.com/bi/swag/swag_006.gif" alt="first-gallery-img">
+                        <img  class="col-xs-12 img-responsive img-gallery" src="{{ image.urlPicture }}" alt="first-gallery-img">
                     </div>
                     <div class="comment-block">
                         <div class="row">
-                            <p class="col-xs-3">23 Likes</p>
-                            <p class="col-xs-3 col-xs-offset-6">2 comments</p>
+                            <p class="col-xs-3">{{ like }} Likes</p>
+                            <p class="col-xs-3 col-xs-offset-6">{{ comment }}comments</p>
                         </div>
-
+                        {% for com in comments %}
+                        <div class="row">
+                            <h4 class="col-xs-12">{{ com.userCommented.firstName }} </h4>
+                            <p class="col-xs-12">{{ com.content }}
+                            </p>
+                        </div>
+                        {% endfor %}
                         <div class="row">
                             <div class="col-xs-2 like-part"><button class="like">like</button></div>
                             {# form #}

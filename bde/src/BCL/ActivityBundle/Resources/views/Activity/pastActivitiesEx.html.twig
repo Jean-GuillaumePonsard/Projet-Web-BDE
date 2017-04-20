@@ -30,12 +30,18 @@
                 {{ include("BCLActivityBundle:Activity:photo.html.twig") }}
                 <div class="col-md-6 activity-exemple-block">
                     {% if images !=0 %}
+                        {% set nbArticle = 4 %}
                     {% for Picture in images %}
-                        <div class="row gallery-block">
+                        {% if loop.index0 % nbArticle == 0 %}
+                            <div class="row gallery-block">
+                        {% endif %}
+
                             <div class="col-xs-3">
                                 <img src="{{ Picture.urlPicture }}" alt="Picture name" class="img-responsive img-gallery " onclick="window.location='{{ path('bcl_activity_pastActivity',{'id': pastActivity.id,'id2': Picture.id}) }}'"/>
                             </div>
-                        </div>
+                                {% if (loop.index0 % nbArticle == nbArticle - 1 or loop.last) %}
+                                    </div>
+                                {% endif %}
                     {% endfor %}
                     {% endif %}
                     <div class="row col-sm-6 col-md-offset-3 shop-pagination">
@@ -53,10 +59,9 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    {# form #}
-                    <div class="col-md-4 col-md-pull-4 back-button-block">
-                        <a href="{#{{ path() }}#}" class="btn btn-default">
+                <div class="row col-md-12 back-button-block2">
+                    <div class="col-md-4">
+                        <a href="{{ path('bcl_activity_pastActivities',{'page': 1}) }}" class="btn btn-default">
                             <i class="glyphicon glyphicon-chevron-left"></i>
                             Back to Past Activities
                         </a>

@@ -31,11 +31,14 @@ class ActivityController extends Controller
 
 
 
+
+
         return $this->render('BCLActivityBundle:Activity:pastActivities.html.twig', array(
             'pastActivities' => $pastActivities,
             'page'=>$page,
             'nbPages'=> $nbPages));
     }
+
 
     public function showAllFutureActivitiesAction($page)
     {
@@ -67,20 +70,37 @@ class ActivityController extends Controller
             'nbPages'=> $nbPages));
     }
 
-    public function showPastActivityAction($id)
+    public function showPastActivityAction($id,$id2)
     {
         $em = $this->getDoctrine()->getManager();
         $pastActivity = $em ->getRepository('BCLActivityBundle:Activity')
-            ->find($id);
+            ->find( $id);
 
         $gallery = $pastActivity->getGallery();
 
         $images =$em ->getRepository('BCLActivityBundle:Picture_Gallery')
             ->findAllPicture($gallery);
 
+        $image = $em ->getRepository('BCLActivityBundle:Picture_Gallery')
+            ->find($id2);
+
+        $nblike =count($image->getPersonsWhoLiked());
+
+        $picture = $image->getId();
+        $comment =$em ->getRepository('BCLActivityBundle:PictureComment')
+            ->findAllComment($picture);
+
+
+        $nbcomment =count($comment);
+
+
         return $this->render('BCLActivityBundle:Activity:pastActivitiesEx.html.twig', array(
             'pastActivity' => $pastActivity,
-            'images'=>$images));
+            'images'=>$images,
+            'image'=> $image,
+            'like'=>$nblike,
+            'comments'=>$comment,
+            'comment'=>$nbcomment));
     }
 
     public function showProposalAction($id)
@@ -113,7 +133,7 @@ class ActivityController extends Controller
         elseif($v > $a)
         {
             $b = 1;
-        }
+        }else{$b = 1;}
 
         return $this->render('BCLActivityBundle:Activity:futurActivitiesEx.html.twig', array(
             'futureActivity' => $futureActivity,'b'=> $b));

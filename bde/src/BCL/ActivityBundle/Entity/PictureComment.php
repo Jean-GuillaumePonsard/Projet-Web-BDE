@@ -31,7 +31,7 @@ class PictureComment
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="Date_Comment", type="datetime")
+     * @ORM\Column(name="Date_Comment", type="datetime",nullable=true)
      */
     private $dateComment;
 

@@ -18,7 +18,9 @@ class ActivityRepository extends EntityRepository
     {
         $query = $this->createQueryBuilder('a')
             ->leftJoin('a.activityStatus ','s')
+            ->leftJoin('a.gallery ','g')
             ->addSelect('s')
+            ->addSelect('g')
             ->where('s.nameStatus = :status')
             ->setParameter('status', $status)
             ->getQuery();

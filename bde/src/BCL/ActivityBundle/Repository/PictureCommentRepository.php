@@ -10,4 +10,17 @@ namespace BCL\ActivityBundle\Repository;
  */
 class PictureCommentRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllComment($picture)
+    {
+        $query = $this->createQueryBuilder('a')
+            ->leftJoin('a.imageCommented ','s')
+            ->addSelect('s')
+            ->leftJoin('a.userCommented ','u')
+            ->addSelect('u')
+            ->where('a.imageCommented = :picture')
+            ->setParameter('picture', $picture)
+            ->getQuery();
+        return $query
+            ->getResult();
+    }
 }
