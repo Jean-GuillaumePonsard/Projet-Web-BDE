@@ -9,6 +9,7 @@ use BCL\UserBundle\Entity\Schoolyear;
 use BCL\UserBundle\Entity\Status;
 use BCL\UserBundle\Entity\Users;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
@@ -28,7 +29,7 @@ class UserController extends Controller
 {
     public function indexAction()
     {
-        return new Response("Ici il y aura vos utilisateurs");
+        return new Response("Erreur");
     }
 
     public function removeUserAction($id)
@@ -39,15 +40,6 @@ class UserController extends Controller
     public function signInAction(Request $request)
     {
         $user = new Users();
-
-        /*$everyStatus = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Status')->findAll();
-        foreach ($everyStatus as $status)
-        {
-
-        }*/
-
-
-
 
         $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $user)
             ->add('firstName', TextType::class)
@@ -139,8 +131,19 @@ class UserController extends Controller
         return $this->render('BCLCoreBundle::home.html.twig');
     }
 
-    public function viewProfilAction($id, Request $request)
+    public function viewProfilAction(Request $request)
     {
+        $session = $this->get('session');
+        if(!empty($session->get('userId')))
+        {
+            $id = $session->get('userId')[0];
+        }
+        else
+        {
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+        }
+
+
         $user = new Users();
         $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($id);
         /*if (!is_null($_SESSION["status"]))

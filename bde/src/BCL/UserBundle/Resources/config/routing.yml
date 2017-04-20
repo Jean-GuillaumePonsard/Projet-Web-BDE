@@ -21,7 +21,7 @@ bcl_user_logOut:
     defaults: { _controller: BCLUserBundle:User:logOut }
 
 bcl_user_profil:
-    path:     /profil/{id}
+    path:     /profil/
     defaults: { _controller: BCLUserBundle:User:viewProfil }
     requirements:
             id: \d+

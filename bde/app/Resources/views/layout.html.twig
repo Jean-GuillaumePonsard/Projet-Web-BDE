@@ -36,7 +36,7 @@
                 {% if app.session.get('userId') %}
 					<li><a href="{{ path('bcl_shop_cart') }}"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 					<li><a href="{{ path('bcl_user_logOut') }}">Log out</a></li>
-					<li><a href="">Profil</a></li>
+					<li><a href="{{ path('bcl_user_profil') }}">Profil</a></li>
                 {% else %}
 					<li><a href="{{ path('bcl_user_logIn') }}">Log in</a></li>
 					<li><a href="{{ path('bcl_user_signIn') }}">Sign up</a></li>
