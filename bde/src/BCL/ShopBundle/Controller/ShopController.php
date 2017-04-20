@@ -8,7 +8,7 @@ use BCL\ShopBundle\Entity\Article;
 use BCL\ShopBundle\Entity\ClientOrder;
 use BCL\ShopBundle\Entity\To_Compose;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -19,6 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 
 class ShopController extends Controller
@@ -31,12 +32,21 @@ class ShopController extends Controller
 
     public function cartAction()
     {
-        // user Id will be defined with a session parameter
-        $userId = 28;
+        // user Id is defined with a session parameter
+        $session = $this->get('session');
+        if(!empty($session->get('userId')))
+        {
+            $userId = $session->get('userId')[0];
+        }
+        else
+        {
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+        }
+
         $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
         if($user == null)
         {
-            throw new HttpException();
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
         }
 
         // Get Last Client Cart
@@ -63,6 +73,27 @@ class ShopController extends Controller
 
     public function addArticleAction(Request $request)
     {
+        $session = $this->get('session');
+        if(!empty($session->get('userId')))
+        {
+            $userId = $session->get('userId')[0];
+        }
+        else
+        {
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+        }
+
+        $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
+        if($user == null)
+        {
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+        }
+
+        if($user->getStatus()->getName() != 'Teacher' AND $user->getStatus()->getName() != 'Admin')
+        {
+            return new Response('Access Denied', Response::HTTP_UNAUTHORIZED);
+        }
+
         $article = new Article();
 
         $form = $this->get('form.factory')->createBuilder(FormType::class, $article)
@@ -93,12 +124,23 @@ class ShopController extends Controller
 
     public function addArticleToCartAction($id, Request $query)
     {
-        // user Id will be defined with a session parameter
-        $userId = 28;
+        // user Id is defined with a session parameter
+
+        $session = $this->get('session');
+        if(!empty($session->get('userId')))
+        {
+            $userId = $session->get('userId')[0];
+        }
+        else
+        {
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+        }
+
         $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
+
         if($user == null)
         {
-            throw new HttpException();
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
         }
 
         // Get Last Client Cart
@@ -154,12 +196,21 @@ class ShopController extends Controller
 
     public function payCartAction()
     {
-        // user Id will be defined with a session parameter
-        $userId = 28;
+        // user Id is defined with a session parameter
+        $session = $this->get('session');
+        if(!empty($session->get('userId')))
+        {
+            $userId = $session->get('userId')[0];
+        }
+        else
+        {
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+        }
+
         $user = $this->getDoctrine()->getManager()->getRepository('BCLUserBundle:Users')->find($userId);
         if($user == null)
         {
-            throw new HttpException();
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
         }
 
         // Get Last Client Cart
