@@ -6,6 +6,7 @@ namespace BCL\ActivityBundle\Controller;
 
 use BCL\ActivityBundle\BCLActivityBundle;
 use BCL\ActivityBundle\Entity\Activity;
+use BCL\ActivityBundle\Entity\ActivityDate;
 use BCL\ActivityBundle\Entity\Gallery;
 use BCL\ActivityBundle\Entity\Picture_Gallery;
 use BCL\ActivityBundle\Entity\PictureComment;
