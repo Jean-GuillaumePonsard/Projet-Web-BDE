@@ -45,28 +45,32 @@ class ActivityController extends Controller
                 {
                     $dates = null;
                     $dates= $em->getRepository('BCLActivityBundle:ActivityDate')->findByActivity($pastActivity->getId());
-                    foreach ($dates as $date) {
 
+                    foreach ($dates as $date) {
                         if (!is_null($date->getUser())) {
                             $nb = count($date->getUser());
+
                             $d = $date->getDateActivity()->format('F d Y');
                             $vote = array($d => $nb);
 
-                        }
+                            if (isset($vote)) {
 
-                        if (isset($vote)) {
-                            while ($nbvote = current($vote)) {
-                                if ($nbvote == max($vote)) {
-                                    $dateFinal = key($vote);
+                                while ($nbvote = current($vote)) {
+                                    if ($nbvote == max($vote)) {
+                                        $dateFinal = key($vote);
+                                        $pastActivity->setDateF($dateFinal);
+                                    }
+                                    next($vote);
                                 }
-                                next($vote);
+
+                                if (is_null($pastActivity->getDateF()))
+                                {
+                                    $pastActivity->setDateF($d);
+                                }
+
                             }
-                        }
 
-                        if (isset($dateFinal)) {
-                            $pastActivity->setDateF($dateFinal);
                         }
-
                     }
                 }
             }
@@ -102,24 +106,28 @@ class ActivityController extends Controller
                     foreach ($dates as $date)
                     {
 
-                        if (!is_null($date->getUser()))
-                        {
-                            $nb =count($date->getUser());
-                            $d=$date->getDateActivity()->format('F d Y');
-                            $vote= array($d=>$nb);
-                        }
-                        if (isset($vote))
-                        {
-                            while ($nbvote = current($vote)) {
-                                if ($nbvote == max($vote)) {
-                                    $dateFinal =key($vote);
+                        if (!is_null($date->getUser())) {
+                            $nb = count($date->getUser());
+
+                            $d = $date->getDateActivity()->format('F d Y');
+                            $vote = array($d => $nb);
+
+                            if (isset($vote)) {
+
+                                while ($nbvote = current($vote)) {
+                                    if ($nbvote == max($vote)) {
+                                        $dateFinal = key($vote);
+                                        $value->setDateF($dateFinal);
+                                    }
+                                    next($vote);
                                 }
-                                next($vote);
+
+                                if (is_null($value->getDateF()))
+                                {
+                                    $value->setDateF($d);
+                                }
                             }
                         }
-                        if (isset($dateFinal))
-                        {$value->setDateF($dateFinal);}
-
                     }
                 }
             }else{$b=2;}
