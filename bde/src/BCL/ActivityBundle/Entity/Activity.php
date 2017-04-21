@@ -76,6 +76,42 @@ class Activity
 
     private $dateF;
 
+    private $dateChoice1;
+
+    /**
+     * @return mixed
+     */
+    public function getDateChoice1()
+    {
+        return $this->dateChoice1;
+    }
+
+    /**
+     * @param mixed $dateChoice1
+     */
+    public function setDateChoice1(\DateTime $dateChoice1)
+    {
+        $this->dateChoice1 = $dateChoice1;
+    }
+
+    private $dateChoice2;
+
+    /**
+     * @return mixed
+     */
+    public function getDateChoice2()
+    {
+        return $this->dateChoice2;
+    }
+
+    /**
+     * @param mixed $dateChoice2
+     */
+    public function setDateChoice2(\DateTime $dateChoice2)
+    {
+        $this->dateChoice2 = $dateChoice2;
+    }
+
     /**
      * Get id
      *

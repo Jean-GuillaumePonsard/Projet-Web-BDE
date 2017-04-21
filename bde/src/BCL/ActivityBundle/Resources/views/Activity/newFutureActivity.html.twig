@@ -12,6 +12,7 @@
             {# Les erreurs générales du formulaire. #}
             {{ form_errors(form) }}
                     <div class=" row col-md-8 col-md-offset-2">
+                        <div class="row">
                         <div>
                             {{ form_label(form.name, "Activity Name") }}
                             {{ form_widget(form.name, {'attr': {'class': 'form-control activity-info1'}}) }}
@@ -29,26 +30,19 @@
                             {{ form_label(form.dateCloseSubscribe, "Registration Deadline") }}
                             {{ form_widget(form.dateCloseSubscribe, {'attr': {'class': 'form-control activity-info'}}) }}
                         </div>
-                        {#<div class="row">
-                            <div class="col-sm-4">
-                                date option 1:
-                                <input type="date" name="dateoption1" class="form-control activity-date-info" >
+                        </div>
+                        <div class="row">{{ form_label(form.dateChoice1, "Date Choice") }}</div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                {{ form_label(form.dateChoice1, "Date") }}
+                                {{ form_widget(form.dateChoice1, {'attr': {'class': 'form-control activity-info'}}) }}
                             </div>
-                            <div class="col-sm-4">
-                                date option 2:
-                                <input type="date" name="dateoption2" class="form-control activity-date-info" >
+                            <div class="col-md-4">
+                                {{ form_label(form.dateChoice2, "Date") }}
+                                {{ form_widget(form.dateChoice2, {'attr': {'class': 'form-control activity-info'}}) }}
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                date option 3:
-                                <input type="date" name="dateoption3" class="form-control activity-date-info" >
-                            </div>
-                            <div class="col-sm-4">
-                                date option 4:
-                                <input type="date" name="dateoption4" class="form-control activity-date-info" >
-                            </div>
-                        </div>#}
+
                         <div>
                             <label class="custom-file" >
                                 {{ form_label(form.urlPicture, "Url of the activity Picture") }}

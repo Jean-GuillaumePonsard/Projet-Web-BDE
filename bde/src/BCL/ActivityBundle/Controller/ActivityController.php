@@ -379,6 +379,8 @@ class ActivityController extends Controller
         $activity = new Activity();
         $activity->setActivityStatus($this->getDoctrine()->getManager()->getRepository('BCLActivityBundle:ActivityStatus')->findByNameStatus("Future")[0]);
 
+        $dateActivity = new ActivityDate();
+        $dateActivity2 = new ActivityDate();
 
         $form = $this->get('form.factory')->createBuilder(FormType::class, $activity)
             ->add('name',               TextType::class)
@@ -386,6 +388,8 @@ class ActivityController extends Controller
             ->add('dateCloseVote',      DateType::class)
             ->add('dateCloseSubscribe', DateType::class)
             ->add('urlPicture',         UrlType::class)
+            ->add('dateChoice1',        DateType::class)
+            ->add('dateChoice2',        DateType::class)
             ->add('validate',           SubmitType::class)
             ->getForm()
         ;
@@ -396,14 +400,23 @@ class ActivityController extends Controller
 
             if ($form->isValid())
             {
+                $dateActivity->setActivity($activity);
+                $dateActivity->setDateActivity($activity->getDateChoice1());
+
+                $dateActivity2->setActivity($activity);
+                $dateActivity2->setDateActivity($activity->getDateChoice2());
+
                 $em = $this->getDoctrine()->getManager();
 
                 $em->persist($activity);
+                $em->persist($dateActivity);
+                $em->persist($dateActivity2);
 
                 $em->flush();
 
                 return new RedirectResponse($this->generateUrl('bcl_activity_futuractivities',array('page'=>'1')));
             }
+
 
         }
         return $this->render('BCLActivityBundle:Activity:newFutureActivity.html.twig', array('form' => $form->createView()));
