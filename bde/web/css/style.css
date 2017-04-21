@@ -278,6 +278,7 @@ section.col-md-10.col-md-offset-1
 .row.shop-section
 {
 	margin-bottom: 5%;
+
 }
 
 .col-md-6.col-md-offset-3.registration-section
@@ -538,13 +539,15 @@ div.aside-block
 
 /* pagination */
 
-.row.col-sm-6.col-md-offset-3.shop-pagination
+/*.row.col-xs-6.col-xs-offset-3.shop-pagination
 {
 	text-align: center;
-}
+}*/
+
 
 ul.pagination li a.page-selector
 {
+
 	color: #c2242a;
 }
 

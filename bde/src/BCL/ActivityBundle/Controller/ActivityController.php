@@ -6,6 +6,7 @@ namespace BCL\ActivityBundle\Controller;
 
 use BCL\ActivityBundle\BCLActivityBundle;
 use BCL\ActivityBundle\Entity\Activity;
+use BCL\ActivityBundle\Entity\Gallery;
 use BCL\ActivityBundle\Entity\Picture_Gallery;
 use BCL\ActivityBundle\Entity\PictureComment;
 use Symfony\Component\DomCrawler\Image;
@@ -89,7 +90,7 @@ class ActivityController extends Controller
     public function showAllFutureActivitiesAction($page)
     {
         $nbPerPage = 4;
-        $b = 0;
+
         $em = $this->getDoctrine()->getManager();
         $Allactivity = $em->getRepository('BCLActivityBundle:Activity')->findByActivityStatus($em->getRepository('BCLActivityBundle:ActivityStatus')->findOneBy(array('nameStatus'=>'Future')));
         foreach ($Allactivity as $value)
@@ -100,7 +101,7 @@ class ActivityController extends Controller
             if (!is_null($s))
             {if ($s <$a)
             {
-                $b = 1;
+
                 $dates = $em->getRepository('BCLActivityBundle:ActivityDate')->findByActivity($value->getId());
                 foreach ($dates as $date)
                 {
@@ -131,11 +132,14 @@ class ActivityController extends Controller
                         }
                     }
                 }
-            }else{$b=2;}
+            }
             }
             if (!is_null($value->getDateF())) {
-                $f = $value->getDateF();
+                $f = new \DateTime($value->getDateF());
+                $f->format('Y-m-d');
+
                 if ($f < $a) {
+
                     $value->setActivityStatus($em->getRepository('BCLActivityBundle:ActivityStatus')->findOneBy(array('nameStatus' => 'Past')));
                     $gallery = new Gallery();
                     $value->setGallery($gallery);
@@ -151,8 +155,7 @@ class ActivityController extends Controller
         return $this->render('BCLActivityBundle:Activity:futureActivities.html.twig', array(
             'futureActivities' => $futureActivities,
             'page'=>$page,
-            'nbPages'=> $nbPages,
-            'b'=> $b));
+            'nbPages'=> $nbPages));
     }
 
     public function showAllProposalsAction($page)
