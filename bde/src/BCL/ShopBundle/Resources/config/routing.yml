@@ -36,5 +36,7 @@ bcl_shop_add_article:
     defaults: { _controller: BCLShopBundle:Shop:addArticle }
 
 bcl_shop_remove_article:
-    path:     /article/removeArticle
+    path:     /article/removeArticle/{id}
     defaults: { _controller: BCLShopBundle:Shop:removeArticle }
+    requirements:
+        id: \d+

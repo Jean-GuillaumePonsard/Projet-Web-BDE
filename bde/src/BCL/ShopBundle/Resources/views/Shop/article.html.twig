@@ -3,32 +3,39 @@
 {% block article %}
 	{% set nbArticle = 2 %}
 	{% for article in articles %}
-		{% if loop.index0 % nbArticle == 0 %}
-			<div class="row shop-section">
-		{% endif %}
-		<article>
-			<div class="media col-xs-6">
-				<div class="media-left col-xs-4">
-					<img src="{{ article.urlPicture }}" class="img-responsive img-product"/>
-				</div>	
-				<div class="media-body">
-					<h3 class="media-heading">{{ article.name }}</h3>
-					<h5>{{ article.price }} €</h5>
-					<p>{{ article.description }}</p>
-					{# button Add to Cart #}
-					<form method="get" action="{{ path('bcl_shop_add_article_to_cart', {'id': article.id}) }}">
-						<input type="number" name="quantity" value="1" >
-						<input type="submit" name="addcart" value="Add To Cart" class="btn btn-primary">
-					</form>
+		{% if article.active %}
+			{% if loop.index0 % nbArticle == 0 %}
+				<div class="row shop-section">
+			{% endif %}
+			<article>
+				<div class="media col-xs-6">
+					<div class="media-left col-xs-4">
+						<img src="{{ article.urlPicture }}" class="img-responsive img-product"/>
+					</div>
+					<div class="media-body">
+						<h3 class="media-heading">{{ article.name }}
+							{% if app.session.get('status')  %}
+								{% if app.session.get('status')[0] == "Admin" or app.session.get('status')[0] == "Teacher" %}
+									<a href="{{ path('bcl_shop_remove_article', {'id':article.id}) }}" class="btn btn-primary" >X</a></h3>
+								{% endif %}
+							{% endif %}
+						<h5>{{ article.price }} €</h5>
+						<p>{{ article.description }}</p>
+						{# button Add to Cart #}
+						<form method="get" action="{{ path('bcl_shop_add_article_to_cart', {'id': article.id}) }}">
+							<input type="number" name="quantity" value="1" >
+							<input type="submit" name="addcart" value="Add To Cart" class="btn btn-primary">
+						</form>
+					</div>
 				</div>
-			</div>
-		</article>
-		{% if (loop.index0 % nbArticle == nbArticle - 1 or loop.last) %}
-    		</div>
-  		{% endif %}
+			</article>
+			{% if (loop.index0 % nbArticle == nbArticle - 1 or loop.last) %}
+				</div>
+			{% endif %}
+		{% endif %}
 	{% endfor %}
 			
-	<div class="row col-sm-6 col-md-offset-3 shop-pagination">
+	{#<div class="row col-sm-6 col-md-offset-3 shop-pagination">
 		<ul class="pagination">
 		   	<li><a href="#" class="page-selector">&laquo;</a></li>
 		    <li><a href="#" class="page-selector">1</a></li>
@@ -36,5 +43,5 @@
 		    <li><a href="#" class="page-selector">3</a></li>
 		    <li><a href="#" class="page-selector">&raquo;</a></li>
 		</ul>
-	</div>
+	</div>#}
 {% endblock %}

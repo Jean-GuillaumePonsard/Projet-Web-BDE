@@ -26,7 +26,7 @@ class ShopController extends Controller
 {
     public function indexAction()
     {
-        $articles = $this->getDoctrine()->getManager()->getRepository('BCLShopBundle:Article')->findAll();
+        $articles = $this->getDoctrine()->getManager()->getRepository('BCLShopBundle:Article')->findByActive(true);
         return $this->render('BCLShopBundle:Shop:article.html.twig', array('articles' => $articles));
     }
 
@@ -231,5 +231,44 @@ class ShopController extends Controller
         $manager->flush();
 
         return new RedirectResponse($this->generateUrl('bcl_shop_homepage'));
+    }
+
+    public function removeArticleAction($id)
+    {
+        $session = $this->get('session');
+        if(!empty($session->get('userId')))
+        {
+            $userId = $session->get('userId')[0];
+        }
+        else
+        {
+            return new RedirectResponse($this->generateUrl('bcl_user_logIn'));
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $em->getRepository('BCLUserBundle:Users')->find($userId);
+
+        if(!($user->getStatus()->getName() == "Admin" OR $user->getStatus()->getName() == "Teacher"))
+        {
+            throw $this->createAccessDeniedException('Access Denied');
+        }
+
+        $article = new Article();
+        $article = $em->getRepository('BCLShopBundle:Article')->find($id);
+
+        if(empty($article))
+        {
+            throw $this->createNotFoundException('Impossible to find article');
+        }
+
+        $article->setActive(false);
+
+        $em->persist($article);
+
+        $em->flush();
+
+        return new RedirectResponse($this->generateUrl('bcl_shop_homepage'));
+
     }
 }
