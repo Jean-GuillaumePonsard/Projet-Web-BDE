@@ -89,6 +89,7 @@ class ActivityController extends Controller
     public function showAllFutureActivitiesAction($page)
     {
         $nbPerPage = 4;
+        $b = 0;
         $em = $this->getDoctrine()->getManager();
         $Allactivity = $em->getRepository('BCLActivityBundle:Activity')->findByActivityStatus($em->getRepository('BCLActivityBundle:ActivityStatus')->findOneBy(array('nameStatus'=>'Future')));
         foreach ($Allactivity as $value)
